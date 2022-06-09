@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/muhannad/AndroidStudioProjects/Project2Student/app/src/main/res/drawable/ic_menu.xml" value="0.1" />
+        <entry key="..\:/Users/muhannad/AndroidStudioProjects/Project2Student/app/src/main/res/drawable/ic_more.xml" value="0.1" />
+        <entry key="..\:/Users/muhannad/AndroidStudioProjects/Project2Student/app/src/main/res/drawable/login_bg.xml" value="0.264" />
+        <entry key="..\:/Users/muhannad/AndroidStudioProjects/Project2Student/app/src/main/res/drawable/login_button_bg.xml" value="0.10648148148148148" />
+        <entry key="..\:/Users/muhannad/AndroidStudioProjects/Project2Student/app/src/main/res/drawable/login_edit_text_sides.xml" value="0.10648148148148148" />
+        <entry key="..\:/Users/muhannad/AndroidStudioProjects/Project2Student/app/src/main/res/drawable/login_left_side.xml" value="0.10648148148148148" />
+        <entry key="..\:/Users/muhannad/AndroidStudioProjects/Project2Student/app/src/main/res/drawable/login_shape_panel.xml" value="0.10648148148148148" />
+        <entry key="..\:/Users/muhannad/AndroidStudioProjects/Project2Student/app/src/main/res/drawable/main_parent_bg.xml" value="0.2703125" />
+        <entry key="..\:/Users/muhannad/AndroidStudioProjects/Project2Student/app/src/main/res/drawable/main_parent_bg_green.xml" value="0.1" />
+        <entry key="..\:/Users/muhannad/AndroidStudioProjects/Project2Student/app/src/main/res/drawable/main_parent_bg_menu.xml" value="0.1" />
+        <entry key="..\:/Users/muhannad/AndroidStudioProjects/Project2Student/app/src/main/res/drawable/main_parent_bg_red.xml" value="0.1" />
+        <entry key="..\:/Users/muhannad/AndroidStudioProjects/Project2Student/app/src/main/res/drawable/persona_profile_photo_ic.xml" value="0.15185185185185185" />
+        <entry key="..\:/Users/muhannad/AndroidStudioProjects/Project2Student/app/src/main/res/drawable/personal_profile_previous_arrow_ic.xml" value="0.15185185185185185" />
+        <entry key="..\:/Users/muhannad/AndroidStudioProjects/Project2Student/app/src/main/res/drawable/personal_profile_top_bg.xml" value="0.15185185185185185" />
+        <entry key="..\:/Users/muhannad/AndroidStudioProjects/Project2Student/app/src/main/res/layout/activity_about_us.xml" value="0.12314814814814815" />
+        <entry key="..\:/Users/muhannad/AndroidStudioProjects/Project2Student/app/src/main/res/layout/activity_general_note.xml" value="0.1" />
+        <entry key="..\:/Users/muhannad/AndroidStudioProjects/Project2Student/app/src/main/res/layout/activity_general_notes.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/muhannad/AndroidStudioProjects/Project2Student/app/src/main/res/layout/activity_login.xml" value="0.264" />
+        <entry key="..\:/Users/muhannad/AndroidStudioProjects/Project2Student/app/src/main/res/layout/activity_main.xml" value="0.13020833333333334" />
+        <entry key="..\:/Users/muhannad/AndroidStudioProjects/Project2Student/app/src/main/res/layout/activity_main_parent.xml" value="0.264" />
+        <entry key="..\:/Users/muhannad/AndroidStudioProjects/Project2Student/app/src/main/res/layout/activity_personal_profile.xml" value="0.6" />
+        <entry key="..\:/Users/muhannad/AndroidStudioProjects/Project2Student/app/src/main/res/layout/main_nav_drawer.xml" value="0.6" />
+        <entry key="..\:/Users/muhannad/AndroidStudioProjects/Project2Student/app/src/main/res/layout/main_toolbar.xml" value="0.264" />
+        <entry key="..\:/Users/muhannad/AndroidStudioProjects/Project2Student/app/src/main/res/layout/public_adverts_card_view.xml" value="0.25416666666666665" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
