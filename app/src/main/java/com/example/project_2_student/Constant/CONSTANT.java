@@ -18,7 +18,7 @@ public class CONSTANT {
         Retrofit retrofit = new Retrofit.Builder().baseUrl(URL_EMULATOR)
                 .addConverterFactory(GsonConverterFactory.create(gson)).build();
         API api = retrofit.create(API.class);
-        System.out.println("Hello World2222");
+        System.out.println("my name nabeel HIII");
         return api;
     }
 }
