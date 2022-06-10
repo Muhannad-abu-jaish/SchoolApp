@@ -89,7 +89,8 @@ public class MainParent extends AppCompatActivity {
 
     public void clickOnSendMessage()
     {
-        main_parent_sends_message.setOnClickListener(new View.OnClickListener() {
+        main_parent_sends_message.setOnClickListener(new View.OnClickListener()
+        {
             @Override
             public void onClick(View v) {
 
@@ -179,10 +180,13 @@ public class MainParent extends AppCompatActivity {
         //Set message
         builder.setMessage("Are you sure yoy want to logout ?");
         //positive yes button
-        builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+        builder.setPositiveButton("Yes", new DialogInterface.OnClickListener()
+        {
             @Override
-            public void onClick(DialogInterface dialog, int which) {
+            public void onClick(DialogInterface dialog, int which)
+            {
                 //Finish activity
+                redirectActivity(activity,LoginActivity.class);
                 activity.finishAffinity();
                 //Exit app
                 System.exit(0);
@@ -214,7 +218,8 @@ public class MainParent extends AppCompatActivity {
 
 
     @Override
-    protected void onPause() {
+    protected void onPause()
+    {
         super.onPause();
         //Close drawer
         closeDrawer(drawerLayout);

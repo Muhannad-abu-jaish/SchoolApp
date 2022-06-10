@@ -115,6 +115,8 @@ public class LoginActivity extends AppCompatActivity {
         editor.putInt("name_sec",student.getName_sec());
         System.out.println("Name Class :"+ student.getName_class()+"\n"+"Name Sec :" +student.getName_sec() );
         editor.putString("token",student.getToken());
+        editor.apply();
+
 
     }
 }

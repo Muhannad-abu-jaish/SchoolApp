@@ -53,4 +53,7 @@ public class Instructors {
         return Type;
     }
 
+    public String getToken() {
+        return token;
+    }
 }

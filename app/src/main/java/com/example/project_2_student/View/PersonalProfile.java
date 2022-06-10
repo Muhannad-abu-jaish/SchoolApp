@@ -27,10 +27,16 @@ public class PersonalProfile extends AppCompatActivity {
         setContentView(R.layout.activity_personal_profile);
 
         init();
+        setPersonalInformation();
 
 
 
     }//End of onCreate
+
+    private void setPersonalInformation()
+    {
+
+    }
 
     public void init()
     {
