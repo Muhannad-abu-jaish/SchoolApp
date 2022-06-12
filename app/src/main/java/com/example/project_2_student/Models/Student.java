@@ -12,8 +12,8 @@ public class Student {
     private int age;
     private String username;
     private String password;
-    private Date signInDate;
-    private Date BirthDate;
+    private String signInDate;
+    private String BirthDate;
     private int attend_number;
     private int absence_number;
     private String token;
@@ -56,11 +56,11 @@ public class Student {
         return password;
     }
 
-    public Date getSignInDate() {
+    public String getSignInDate() {
         return signInDate;
     }
 
-    public Date getBirthDate() {
+    public String getBirthDate() {
         return BirthDate;
     }
 
@@ -80,7 +80,7 @@ public class Student {
 
     }
 
-    public Student(int sid, String first_name, String last_name, String father_name, int age, String username, String password, Date signInDate, Date birthDate, int attend_number, int absence_number, String token,int name_class ,int name_sec) {
+    public Student(int sid, String first_name, String last_name, String father_name, int age, String username, String password, String signInDate, String birthDate, int attend_number, int absence_number, String token,int name_class ,int name_sec) {
         Sid = sid;
         this.first_name = first_name;
         this.last_name = last_name;

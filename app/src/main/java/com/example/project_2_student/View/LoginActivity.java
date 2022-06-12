@@ -31,17 +31,43 @@ public class LoginActivity extends AppCompatActivity {
     TextView forgotPassword_tv;
     SharedPreferences sharedPreferences;
 
+    public static final String FIRST_NAME="first_name";
+    public static final String LAST_NAME="last_name";
+    public static final String FATHER_NAME="father_name";
+    public static final String AGE="age";
+    public static final String USER_NAME="user_name";
+    public static final String PASSWORD="password";
+    public static final String SIGNIN_DATE="signIn_date";
+    public static final String BIRTH_DATE="birth_date";
+    public static final String ATTEND_NUMBER="attend_number";
+    public static final String ABSENCE_NUMBER="absence_number";
+    public static final String NAME_CLASS="name_class";
+    public static final String NAME_SEC="name_sec";
+    public static final String TOKEN="token";
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
         init();
-         clickButtons();
+       // checkLogin();
+        clickButtons();
 
 
 
     }//End of onCreate
+
+    private void checkLogin() {
+    if(sharedPreferences.getBoolean("isLogin",false))
+    {
+        finish();
+        MainParent.redirectActivity(LoginActivity.this, MainParent.class);
+    }
+
+    }
 
 
     public void init()
@@ -78,6 +104,7 @@ public class LoginActivity extends AppCompatActivity {
                 if(response.isSuccessful())
                 {
                     saveIntoSharedPrefrences(response.body());
+                    finish();
                     MainParent.redirectActivity(LoginActivity.this, MainParent.class);
                 }
                 else {
@@ -101,22 +128,23 @@ public class LoginActivity extends AppCompatActivity {
 
     private void saveIntoSharedPrefrences(Student student) {
         SharedPreferences.Editor editor = sharedPreferences.edit();
-        editor.putString("first_name",student.getFirst_name());
-        editor.putString("last_name",student.getLast_name());
-        editor.putString("father_name",student.getFather_name());
-        editor.putInt("age",student.getAge());
-        editor.putString("user_name",student.getUsername());
-        editor.putString("password",student.getPassword());
-        editor.putString("signIn_date",student.getSignInDate().toString());
-        editor.putString("birth_date",student.getBirthDate().toString());
-        editor.putInt("attend_number",student.getAttend_number());
-        editor.putInt("absence_number",student.getAbsence_number());
-        editor.putInt("name_class",student.getName_class());
-        editor.putInt("name_sec",student.getName_sec());
-        System.out.println("Name Class :"+ student.getName_class()+"\n"+"Name Sec :" +student.getName_sec() );
-        editor.putString("token",student.getToken());
+        editor.putString(FIRST_NAME,student.getFirst_name());
+        editor.putString(LAST_NAME,student.getLast_name());
+        editor.putString(FATHER_NAME,student.getFather_name());
+        editor.putInt(AGE,student.getAge());
+        editor.putString(USER_NAME,student.getUsername());
+        editor.putString(PASSWORD,student.getPassword());
+        editor.putString(SIGNIN_DATE,student.getSignInDate().toString());
+        editor.putString(BIRTH_DATE,student.getBirthDate().toString());
+        editor.putInt(ATTEND_NUMBER,student.getAttend_number());
+        editor.putInt(ABSENCE_NUMBER,student.getAbsence_number());
+        editor.putInt(NAME_CLASS,student.getName_class());
+        editor.putInt(NAME_SEC,student.getName_sec());
+        editor.putString(TOKEN,student.getToken());
+        editor.putBoolean("isLogin",true);
         editor.apply();
 
 
     }
+
 }
