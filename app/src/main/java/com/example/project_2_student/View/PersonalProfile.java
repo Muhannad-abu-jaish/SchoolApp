@@ -25,7 +25,7 @@ public class PersonalProfile extends AppCompatActivity {
     TextView personal_profile_student_name_tv , personal_profile_grade_number_tv , personal_profile_division_number_tv;
     TextView personal_profile_phone_number_tv , personal_profile_username_tv , personal_profile_password_tv , personal_profile_birth_date_tv ;
     TextView personal_profile_address_tv , personal_profile_admission_date_tv , personal_profile_age_tv;
-
+    TextView personal_profile_evaluate_student;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -59,6 +59,7 @@ public class PersonalProfile extends AppCompatActivity {
         personal_profile_address_tv=findViewById(R.id.personal_profile_rl_cv_ll5_address_tv);
         personal_profile_admission_date_tv=findViewById(R.id.personal_profile_rl_cv_ll6_admission_date_tv);
         personal_profile_age_tv=findViewById(R.id.personal_profile_rl_cv_ll7_age_tv);
+        personal_profile_evaluate_student = findViewById(R.id.personal_profile_evaluate_student);
 
     }//End on init
 
@@ -75,7 +76,7 @@ public class PersonalProfile extends AppCompatActivity {
         String birth_date = sharedPreferences.getString(LoginActivity.BIRTH_DATE,"No Birth Date");
         int class_number = sharedPreferences.getInt(LoginActivity.NAME_CLASS,0);
         int section_number = sharedPreferences.getInt(LoginActivity.NAME_SEC,0);
-
+        int evaluate = sharedPreferences.getInt(LoginActivity.EVALUATE,0);
         setOnProfile(first_name,father_name,last_name,age,user_name,password,signin_date,birth_date,class_number,section_number);
 
     }//End of getProfileInformation

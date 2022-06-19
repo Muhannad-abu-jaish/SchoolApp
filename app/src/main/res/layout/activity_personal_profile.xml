@@ -156,12 +156,14 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="195dp"
                 android:gravity="center"
+                android:id="@+id/personal_profile_evaluate_student"
                 android:text="Student Evaluation" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="220dp"
+                android:id="@+id/personal_profile_rank_student"
                 android:gravity="center"
                 android:text="ٍStudent Ranking" />
 

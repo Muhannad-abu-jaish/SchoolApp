@@ -5,6 +5,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 
@@ -14,18 +15,21 @@ import com.example.project_2_student.Models.API;
 import com.example.project_2_student.Models.GeneralNotes;
 import com.example.project_2_student.R;
 
+import java.io.IOException;
 import java.util.ArrayList;
 
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class GeneralNote extends AppCompatActivity {
+public class GeneralNote extends AppCompatActivity  {
 
     ArrayList<GeneralNotes> public_adverts_models = new ArrayList<>();
     RecyclerView recyclerView;
-    AdapterGeneralNotes adapter_adverts;
+    AdapterGeneralNotes adapter_adverts_public , adapter_adverts_private;
     DrawerLayout drawerLayout;
+    String myToken;
+    SharedPreferences sharedPreferences;
 
 
     @Override
@@ -33,38 +37,84 @@ public class GeneralNote extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_general_note);
         init();
-        GET_ANNOUNCEMENT();
+        try {
+            GET_ANNOUNCEMENT();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 
-    private void GET_ANNOUNCEMENT()
-    {
+    private void GET_ANNOUNCEMENT() throws InterruptedException {
         API api = CONSTANT.CREATING_CALL();
-        Call<ArrayList<GeneralNotes>> call = api.GENERAL_NOTES_CALL();
-        call.enqueue(new Callback<ArrayList<GeneralNotes>>() {
+        Runnable runnable1 = new Runnable() {
             @Override
-            public void onResponse(Call<ArrayList<GeneralNotes>> call, Response<ArrayList<GeneralNotes>> response) {
-                if(response.isSuccessful()){
-                    System.out.println("Exp _ Date : " + response.body().get(0).getExp_date());
-                    adapter_adverts.setGeneralNotes(response.body());
-                    setAdapter();
-                }else{
-                    System.out.println("Error Statues !" + response.code() + "\t Errpr Body : " + response.errorBody());
-                }
+            public void run() {
+                System.out.println("Here in thread1!!!!!");
+                Call<ArrayList<GeneralNotes>> call = api.GENERAL_NOTES_CALL();
+                call.enqueue(new Callback<ArrayList<GeneralNotes>>() {
+                    @Override
+                    public void onResponse(Call<ArrayList<GeneralNotes>> call, Response<ArrayList<GeneralNotes>> response) {
+                        if(response.isSuccessful()){
+                            adapter_adverts_public.setGeneralNotes(response.body());
+                            setAdapter(adapter_adverts_public);
+                        }else{
+                            try {
+                                System.out.println("Error Statues !" + response.code() + "\t Error Body : " + response.errorBody().string());
+                            } catch (IOException e) {
+                                e.printStackTrace();
+                            }
+                        }
+                    }
+                    @Override
+                    public void onFailure(Call<ArrayList<GeneralNotes>> call, Throwable t) {
+                        System.out.println("Error : " + t.getMessage());
+                    }
+                });
             }
-            @Override
-            public void onFailure(Call<ArrayList<GeneralNotes>> call, Throwable t) {
-                System.out.println("Error : " + t.getMessage());
-            }
-        });
-    }
+        };
+        Thread thread1 = new Thread(runnable1);
+        thread1.start();
+   Runnable runnable2 = new Runnable() {
+       @Override
+       public void run() {
+           System.out.println("Here in thread2!!!!!");
+           Call<ArrayList<GeneralNotes>> arrayListCall = api.PRIVATE_NOTES_CALL(myToken);
+           arrayListCall.enqueue(new Callback<ArrayList<GeneralNotes>>() {
+               @Override
+               public void onResponse(Call<ArrayList<GeneralNotes>> call, Response<ArrayList<GeneralNotes>> response) {
+                   if(response.isSuccessful()){
+                       adapter_adverts_private.setGeneralNotes(response.body());
+                       setAdapter(adapter_adverts_private);
+                   }else{
+                       try {
+                           System.out.println("Error Statues !" + response.code() + "\t Error Body : " + response.errorBody().string());
+                       } catch (IOException e) {
+                           e.printStackTrace();
+                       }
+                   }
+               }
 
+               @Override
+               public void onFailure(Call<ArrayList<GeneralNotes>> call, Throwable t) {
+                   System.out.println("Error : " + t.getMessage());
+               }
+           });
+
+       }
+   };
+   Thread thread2 = new Thread(runnable2);
+   thread2.start();
+    }
     public void init(){
         recyclerView = findViewById(R.id.recycler_adverts);
         drawerLayout = findViewById(R.id.general_notes_drawer_layout);
-        adapter_adverts = new AdapterGeneralNotes();
-
+        adapter_adverts_private = new AdapterGeneralNotes();
+        adapter_adverts_public = new AdapterGeneralNotes();
+        sharedPreferences = getSharedPreferences("StudentData",MODE_PRIVATE);
+        myToken = sharedPreferences.getString(LoginActivity.TOKEN,"");
+        System.out.println("Token = " + myToken);
     }
-    public void setAdapter(){
+    public void setAdapter(AdapterGeneralNotes adapter_adverts){
         recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext(),RecyclerView.VERTICAL,false));
         recyclerView.setAdapter(adapter_adverts);
     }

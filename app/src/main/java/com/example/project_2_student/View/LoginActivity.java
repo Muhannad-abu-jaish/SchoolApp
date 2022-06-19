@@ -30,7 +30,7 @@ public class LoginActivity extends AppCompatActivity {
     TextInputEditText email_et,password_et;
     TextView forgotPassword_tv;
     SharedPreferences sharedPreferences;
-
+    public static final String STUDENT_DATA_DB = "StudentData";
     public static final String FIRST_NAME="first_name";
     public static final String LAST_NAME="last_name";
     public static final String FATHER_NAME="father_name";
@@ -44,6 +44,7 @@ public class LoginActivity extends AppCompatActivity {
     public static final String NAME_CLASS="name_class";
     public static final String NAME_SEC="name_sec";
     public static final String TOKEN="token";
+    public static final String EVALUATE = "evaluate";
 
 
 
@@ -76,7 +77,7 @@ public class LoginActivity extends AppCompatActivity {
         email_et=findViewById(R.id.login_ll_1_et_email);
         password_et=findViewById(R.id.login_ll_1_et_2_password);
         forgotPassword_tv=findViewById(R.id.login_ll_1_tv_forgot_password);
-        sharedPreferences = getSharedPreferences("StudentData",MODE_PRIVATE);
+        sharedPreferences = getSharedPreferences(LoginActivity.STUDENT_DATA_DB,MODE_PRIVATE);
     }//End of init
 
 
@@ -141,6 +142,8 @@ public class LoginActivity extends AppCompatActivity {
         editor.putInt(NAME_CLASS,student.getName_class());
         editor.putInt(NAME_SEC,student.getName_sec());
         editor.putString(TOKEN,student.getToken());
+        editor.putInt(EVALUATE,student.getRank());
+        System.out.println("Token ===== " + student.getToken());
         editor.putBoolean("isLogin",true);
         editor.apply();
 

@@ -1,10 +1,13 @@
 package com.example.project_2_student.Models;
 
+import com.example.project_2_student.View.GeneralNote;
+
 import java.util.ArrayList;
 
 import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.GET;
+import retrofit2.http.Header;
 import retrofit2.http.POST;
 
 public interface API {
@@ -14,4 +17,6 @@ public interface API {
     public Call<Instructors> loginInstructor(@Body DataLogin dataLogin);
     @GET("/show-public-note")
     public Call<ArrayList<GeneralNotes>> GENERAL_NOTES_CALL();
+    @GET("/show_section_note")
+    public Call<ArrayList<GeneralNotes>> PRIVATE_NOTES_CALL(@Header("Authorization") String token );
 }

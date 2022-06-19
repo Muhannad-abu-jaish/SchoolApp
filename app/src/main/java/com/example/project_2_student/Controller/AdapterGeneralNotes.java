@@ -56,5 +56,6 @@ public class AdapterGeneralNotes extends RecyclerView.Adapter<AdapterGeneralNote
 
     public void setGeneralNotes(ArrayList<GeneralNotes> generalNotes) {
         this.generalNotes = generalNotes;
+        System.out.println("Message : " + generalNotes.get(0).getMessage());
     }
 }

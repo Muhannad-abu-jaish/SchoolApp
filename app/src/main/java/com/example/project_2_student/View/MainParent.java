@@ -26,6 +26,7 @@ public class MainParent extends AppCompatActivity {
 
         init();
         clickOnGeneralNotes();
+        clickOnCalendar();
 
     }//End of onCreate
 
@@ -46,7 +47,7 @@ public class MainParent extends AppCompatActivity {
         main_parent_calendar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+               MainParent.redirectActivity(MainParent.this,WeekProgram.class);
             }
         });
     }
