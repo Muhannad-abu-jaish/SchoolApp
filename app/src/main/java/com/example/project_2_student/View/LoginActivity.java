@@ -1,7 +1,10 @@
 package com.example.project_2_student.View;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
@@ -14,8 +17,11 @@ import com.example.project_2_student.Models.API;
 import com.example.project_2_student.Models.DataLogin;
 import com.example.project_2_student.Models.Student;
 import com.example.project_2_student.R;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
+import com.google.firebase.messaging.FirebaseMessaging;
 
 import java.io.IOException;
 
@@ -45,6 +51,7 @@ public class LoginActivity extends AppCompatActivity {
     public static final String NAME_SEC="name_sec";
     public static final String TOKEN="token";
     public static final String EVALUATE = "evaluate";
+    String tokenMessage;
 
 
 
@@ -78,6 +85,21 @@ public class LoginActivity extends AppCompatActivity {
         password_et=findViewById(R.id.login_ll_1_et_2_password);
         forgotPassword_tv=findViewById(R.id.login_ll_1_tv_forgot_password);
         sharedPreferences = getSharedPreferences(LoginActivity.STUDENT_DATA_DB,MODE_PRIVATE);
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
+            NotificationChannel channel = new NotificationChannel("notification_channel", "notification_channel", NotificationManager.IMPORTANCE_DEFAULT);
+            NotificationManager manager = getSystemService(NotificationManager.class);
+            manager.createNotificationChannel(channel);
+        }
+        FirebaseMessaging.getInstance().getToken().addOnCompleteListener(new OnCompleteListener<String>() {
+            @Override
+            public void onComplete(@NonNull Task<String> task) {
+                if(!task.isSuccessful()){
+                    System.err.println("Error Task Message : " + task.getException());
+                }else{
+                    tokenMessage = task.getResult();
+                }
+            }
+        });
     }//End of init
 
 
@@ -97,7 +119,7 @@ public class LoginActivity extends AppCompatActivity {
     public void insertLogin()
     {
         API api = CONSTANT.CREATING_CALL();
-        Call<Student> dataLoginCall = api.loginStudent(new DataLogin(email_et.getText().toString(),password_et.getText().toString()));
+        Call<Student> dataLoginCall = api.loginStudent(new DataLogin(email_et.getText().toString(),password_et.getText().toString(),tokenMessage));
         dataLoginCall.enqueue(new Callback<Student>() {
             @Override
             public void onResponse(Call<Student> call, Response<Student> response) {

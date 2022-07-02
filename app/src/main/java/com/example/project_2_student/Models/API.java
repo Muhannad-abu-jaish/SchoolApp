@@ -16,7 +16,5 @@ public interface API {
     @POST("/instructor/login")
     public Call<Instructors> loginInstructor(@Body DataLogin dataLogin);
     @GET("/show-public-note")
-    public Call<ArrayList<GeneralNotes>> GENERAL_NOTES_CALL();
-    @GET("/show_section_note")
-    public Call<ArrayList<GeneralNotes>> PRIVATE_NOTES_CALL(@Header("Authorization") String token );
-}
+    public Call<ArrayList<GeneralNotes>> GENERAL_NOTES_CALL(@Header("Authorization") String token);
+    }

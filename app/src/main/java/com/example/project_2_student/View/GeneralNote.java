@@ -31,7 +31,6 @@ public class GeneralNote extends AppCompatActivity  {
     String myToken;
     SharedPreferences sharedPreferences;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,11 +45,7 @@ public class GeneralNote extends AppCompatActivity  {
 
     private void GET_ANNOUNCEMENT() throws InterruptedException {
         API api = CONSTANT.CREATING_CALL();
-        Runnable runnable1 = new Runnable() {
-            @Override
-            public void run() {
-                System.out.println("Here in thread1!!!!!");
-                Call<ArrayList<GeneralNotes>> call = api.GENERAL_NOTES_CALL();
+                Call<ArrayList<GeneralNotes>> call = api.GENERAL_NOTES_CALL(myToken);
                 call.enqueue(new Callback<ArrayList<GeneralNotes>>() {
                     @Override
                     public void onResponse(Call<ArrayList<GeneralNotes>> call, Response<ArrayList<GeneralNotes>> response) {
@@ -71,40 +66,6 @@ public class GeneralNote extends AppCompatActivity  {
                     }
                 });
             }
-        };
-        Thread thread1 = new Thread(runnable1);
-        thread1.start();
-   Runnable runnable2 = new Runnable() {
-       @Override
-       public void run() {
-           System.out.println("Here in thread2!!!!!");
-           Call<ArrayList<GeneralNotes>> arrayListCall = api.PRIVATE_NOTES_CALL(myToken);
-           arrayListCall.enqueue(new Callback<ArrayList<GeneralNotes>>() {
-               @Override
-               public void onResponse(Call<ArrayList<GeneralNotes>> call, Response<ArrayList<GeneralNotes>> response) {
-                   if(response.isSuccessful()){
-                       adapter_adverts_private.setGeneralNotes(response.body());
-                       setAdapter(adapter_adverts_private);
-                   }else{
-                       try {
-                           System.out.println("Error Statues !" + response.code() + "\t Error Body : " + response.errorBody().string());
-                       } catch (IOException e) {
-                           e.printStackTrace();
-                       }
-                   }
-               }
-
-               @Override
-               public void onFailure(Call<ArrayList<GeneralNotes>> call, Throwable t) {
-                   System.out.println("Error : " + t.getMessage());
-               }
-           });
-
-       }
-   };
-   Thread thread2 = new Thread(runnable2);
-   thread2.start();
-    }
     public void init(){
         recyclerView = findViewById(R.id.recycler_adverts);
         drawerLayout = findViewById(R.id.general_notes_drawer_layout);

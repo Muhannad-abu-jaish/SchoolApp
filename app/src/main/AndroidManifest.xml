@@ -3,21 +3,24 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.project_2_student">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
         android:allowBackup="true"
-
-        android:usesCleartextTraffic="true"
-
-
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/icon_school"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@drawable/icon_school"
         android:supportsRtl="true"
         android:theme="@style/Theme.Project2Student"
+        android:screenOrientation="sensorLandscape"
+        android:usesCleartextTraffic="true"
         tools:targetApi="m">
+        <service android:name=".Controller.NotificationService">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
         <activity
             android:name=".View.GeneralNote"
             android:exported="false" />
@@ -30,18 +33,19 @@
         <activity
             android:name=".View.MainParent"
             android:exported="true">
-
+        </activity>
+        <activity
+            android:name=".View.WeekProgram"
+            android:exported="true">
         </activity>
         <activity
             android:name=".View.LoginActivity"
             android:exported="true">
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
         <activity
             android:name=".MainActivity"
