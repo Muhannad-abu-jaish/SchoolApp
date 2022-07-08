@@ -158,9 +158,9 @@ public class PersonalProfile extends AppCompatActivity {
 
     @Override
     protected void onPause() {
+        MainParent.closeDrawer(drawerLayout);
         super.onPause();
         //Close drawer
-        MainParent.closeDrawer(drawerLayout);
-    }
+       }
 
 }

@@ -73,7 +73,7 @@ public class AdapterPrivateNotes extends  RecyclerView.Adapter<AdapterPrivateNot
 
     @Override
     public int getItemCount() {
-        return 0;
+        return privateNotes.size();
     }
 
 }

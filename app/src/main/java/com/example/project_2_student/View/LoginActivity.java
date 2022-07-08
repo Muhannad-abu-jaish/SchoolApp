@@ -51,6 +51,7 @@ public class LoginActivity extends AppCompatActivity {
     public static final String NAME_SEC="name_sec";
     public static final String TOKEN="token";
     public static final String EVALUATE = "evaluate";
+    public static final String SECTIONID = "sectionId";
     String tokenMessage;
 
 
@@ -123,7 +124,6 @@ public class LoginActivity extends AppCompatActivity {
         dataLoginCall.enqueue(new Callback<Student>() {
             @Override
             public void onResponse(Call<Student> call, Response<Student> response) {
-
                 if(response.isSuccessful())
                 {
                     saveIntoSharedPrefrences(response.body());
@@ -165,11 +165,9 @@ public class LoginActivity extends AppCompatActivity {
         editor.putInt(NAME_SEC,student.getName_sec());
         editor.putString(TOKEN,student.getToken());
         editor.putInt(EVALUATE,student.getRank());
-        System.out.println("Token ===== " + student.getToken());
+        editor.putInt(SECTIONID,student.getSectionId());
         editor.putBoolean("isLogin",true);
         editor.apply();
-
-
     }
 
 }

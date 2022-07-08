@@ -9,6 +9,7 @@ import retrofit2.http.Body;
 import retrofit2.http.GET;
 import retrofit2.http.Header;
 import retrofit2.http.POST;
+import retrofit2.http.Path;
 
 public interface API {
     @POST("/login")
@@ -17,6 +18,8 @@ public interface API {
     public Call<Instructors> loginInstructor(@Body DataLogin dataLogin);
     @GET("/show-public-note")
     public Call<ArrayList<GeneralNotes>> GENERAL_NOTES_CALL(@Header("Authorization") String token);
+    @GET("/show_week_program/{section}")
+    public Call<ArrayList<Program>> show_week_program(@Path("section")int sectionId);
     @GET("/show-private-note")
     public Call<ArrayList<PrivateNotes>> PRIVATE_NOTES_CALL(@Header("Authorization") String token) ;
     }

@@ -20,6 +20,30 @@ public class Student {
     private int name_sec ;
     private int name_class;
     private int rank;
+    private int sectionId;
+
+    public int getSectionId() {
+        return sectionId;
+    }
+
+    public Student(int sid, String first_name, String last_name, String father_name, int age, String username, String password, Date signInDate, Date birthDate, int attend_number, int absence_number, String token, int name_sec, int name_class, int rank, int sectionId) {
+        Sid = sid;
+        this.first_name = first_name;
+        this.last_name = last_name;
+        this.father_name = father_name;
+        this.age = age;
+        this.username = username;
+        this.password = password;
+        this.signInDate = signInDate;
+        BirthDate = birthDate;
+        this.attend_number = attend_number;
+        this.absence_number = absence_number;
+        this.token = token;
+        this.name_sec = name_sec;
+        this.name_class = name_class;
+        this.rank = rank;
+        this.sectionId = sectionId;
+    }
 
     public int getRank() {
         return rank;
@@ -83,23 +107,5 @@ public class Student {
 
     public Student() {
 
-    }
-
-    public Student(int sid, String first_name, String last_name, String father_name, int age, String username, String password, Date signInDate, Date birthDate, int attend_number, int absence_number, String token, int name_sec, int name_class, int rank) {
-        Sid = sid;
-        this.first_name = first_name;
-        this.last_name = last_name;
-        this.father_name = father_name;
-        this.age = age;
-        this.username = username;
-        this.password = password;
-        this.signInDate = signInDate;
-        BirthDate = birthDate;
-        this.attend_number = attend_number;
-        this.absence_number = absence_number;
-        this.token = token;
-        this.name_sec = name_sec;
-        this.name_class = name_class;
-        this.rank = rank;
     }
 }
