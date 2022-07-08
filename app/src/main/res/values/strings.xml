@@ -27,4 +27,9 @@
     <string name="SETTINGS">Settings</string>
     <string name="LOGOUT">Logout</string>
     <string name="HONORARY_BOARD">Honorary Board</string>
+
+    //Special Note and General Note
+    <string name="EXPIRED_DATE">Expired date:</string>
+    <string name="SINCE_WHEN"> Since when :</string>
+    <string name="RECEIVE_DATE">Receive Date :</string>
 </resources>

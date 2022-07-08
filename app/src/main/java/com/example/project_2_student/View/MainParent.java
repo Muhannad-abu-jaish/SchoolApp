@@ -26,6 +26,7 @@ public class MainParent extends AppCompatActivity {
 
         init();
         clickOnGeneralNotes();
+        clickOnSpecialNotes();
         clickOnCalendar();
 
     }//End of onCreate
@@ -72,6 +73,7 @@ public class MainParent extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                redirectActivity(MainParent.this , PrivateNote.class);
             }
         });
     }

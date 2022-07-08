@@ -44,9 +44,9 @@ public class AdapterGeneralNotes extends RecyclerView.Adapter<AdapterGeneralNote
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            title = itemView.findViewById(R.id.title_adverts);
-            adverts_text = itemView.findViewById(R.id.Text_adverts);
-            exp_date = itemView.findViewById(R.id.Date_exp_adverts);
+            title = itemView.findViewById(R.id.public_adverts_card_view_title_tv);
+            adverts_text = itemView.findViewById(R.id.public_adverts_card_view_content_tv);
+            exp_date = itemView.findViewById(R.id.public_adverts_card_view_time_tv);
         }
     }
 

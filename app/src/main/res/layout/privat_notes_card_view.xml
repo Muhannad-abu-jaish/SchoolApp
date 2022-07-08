@@ -45,7 +45,7 @@
                     android:layout_weight="2">
 
                     <TextView
-                        android:id="@+id/public_adverts_card_view_title_tv"
+                        android:id="@+id/private_note_card_view_subject_tv"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="12dp"
@@ -67,11 +67,11 @@
                             android:layout_weight="0.5"
                             android:gravity="center"
                             android:textColor="@color/Violet"
-                            android:text="EXPIRED DATE :"
+                            android:text="@string/RECEIVE_DATE"
                             />
 
                         <TextView
-                            android:id="@+id/public_adverts_card_view_time_tv"
+                            android:id="@+id/private_note_card_view_receive_date_tv"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
@@ -83,6 +83,35 @@
 
                     </LinearLayout>
 
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.5"
+                            android:gravity="center"
+                            android:textColor="@color/Violet"
+                            android:text="@string/SINCE_WHEN"
+                            />
+
+                        <TextView
+                            android:id="@+id/private_note_card_view_time_tv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:textColor="@color/Violet"
+                            android:text="date"
+                            />
+
+
+                    </LinearLayout>
 
                 </LinearLayout>
 
@@ -104,10 +133,9 @@
                     android:layout_height="match_parent">
 
                     <TextView
-                        android:id="@+id/public_adverts_card_view_content_tv"
+                        android:id="@+id/private_note_card_view_message_tv"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:inputType="textMultiLine"
                         android:padding="10dp"
                         android:text=""/>
 
