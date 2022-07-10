@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Project-2-Student</string>
+
+    <string name="SchoolName">مدرسة السعادة الخاصة </string>
+
+    //Login Activity
+<string name="LOGIN">تسجيل الدخول</string>
+<string name="USERNAME">اسم المستخدم</string>
+<string name="PASSWORD">كلمة السر</string>
+<string name="FORGOT_PASSWORD">هل نسيت كلمة السر ؟</string>
+
+
+    //Main Parent
+<string name="MAIN_GENERALNOTE">الإعلانات العامة</string>
+<string name="MAIN_SPECIALNOTE">الملاحظات الخاصة</string>
+<string name="MAIN_SEND_NOTE_TO_THE_INSTRUCTOR">التواصل مع الموجه</string>
+<string name="MAIN_FINAL_RESULT">الجلاء</string>
+<string name="MAIN_CALENDER">الجدول الدراسي</string>
+<string name="CreativityText">مدرسة العظماء</string>
+
+    //Menu
+<string name="HOME_TEXT">الصفحة الرئيسية</string>
+<string name="PERSONAL_PROFILE">الملف الشخصي</string>
+<string name="About_Us">عنا</string>
+<string name="SETTINGS">الإعدادات</string>
+<string name="LOGOUT">تسجيل الخروج</string>
+<string name="HONORARY_BOARD">اللوحة الشرفية</string>
+<string name="sunday">الأحد</string>
+<string name="monday">الاثنين</string>
+<string name="tuesday">الثلاثاء</string>
+<string name="wednesday">الأربعاء</string>
+<string name="thursday">الخميس</string>
+
+    //Special Note and General Note
+<string name="EXPIRED_DATE">تاريخ الحذف :</string>
+<string name="SINCE_WHEN"> منذ متى :</string>
+<string name="RECEIVE_DATE">تاريخ الاستقبال</string>
+
+
+    //Send Message
+<string name="WRITE_THE_MESSAGE">من فضلك اكتب\ي الرسالة هنا</string>
+    <string name="WELCOM_TEXT">تستطيع من خلال هذه الواجهة إرسال رسالة للمدرسة وسيتم استقبالها من قبل الموجه…
+    وتستطسع كتابة أي شيئ تريده، شكوي أو نصيحة للمدرسة أو للتطبيق وبعد الانتهاء قم بإرسالها وسيتم قراءة الرسالة بأسرع وقت ممكن وبكل رحابة صدر</string>
+</resources>

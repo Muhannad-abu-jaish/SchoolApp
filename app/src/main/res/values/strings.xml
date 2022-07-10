@@ -37,4 +37,10 @@
     <string name="EXPIRED_DATE">Expired date:</string>
     <string name="SINCE_WHEN"> Since when :</string>
     <string name="RECEIVE_DATE">Receive Date :</string>
+
+
+    //Send Message
+    <string name="WRITE_THE_MESSAGE">Write the message pleas </string>
+    <string name="WELCOM_TEXT">You can in this activity write anything you want the instructor to read it
+    if you have any complaint or advice please leave it in the bottom and send it and we will read it with pleasure.</string>
 </resources>

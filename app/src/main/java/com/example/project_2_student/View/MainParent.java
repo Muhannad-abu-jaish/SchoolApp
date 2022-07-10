@@ -28,6 +28,7 @@ public class MainParent extends AppCompatActivity {
         clickOnGeneralNotes();
         clickOnSpecialNotes();
         clickOnCalendar();
+        clickOnSendMessage();
 
     }//End of onCreate
 
@@ -79,6 +80,7 @@ public class MainParent extends AppCompatActivity {
     }
 
 
+
     public void clickOnFinalResult()
     {
         main_parent_final_result.setOnClickListener(new View.OnClickListener() {
@@ -96,7 +98,7 @@ public class MainParent extends AppCompatActivity {
         {
             @Override
             public void onClick(View v) {
-
+                redirectActivity(MainParent.this , SendMessage.class);
             }
         });
     }
