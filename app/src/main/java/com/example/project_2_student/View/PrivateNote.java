@@ -36,7 +36,7 @@ public class PrivateNote extends AppCompatActivity {
     DrawerLayout drawerLayout;
     String myToken;
     SharedPreferences sharedPreferences;
-    SQLiteDatabase sqLiteDatabase ;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

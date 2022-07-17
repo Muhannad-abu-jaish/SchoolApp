@@ -34,20 +34,6 @@ public class AdapterPrivateNotes extends  RecyclerView.Adapter<AdapterPrivateNot
         this.privateNotes = privateNotes ;
     }
 
-     public class ViewHolderPrivateNote extends RecyclerView.ViewHolder{
-
-        TextView privateNoteSubject , privateNoteMessage , privateNoteStartDate , privateNoteAgoTime ;
-
-        public ViewHolderPrivateNote(@NonNull View itemView) {
-            super(itemView);
-
-           // privateNoteSubject = itemView.findViewById(R.id.private_note_card_view_subject_tv) ; //the subject type (المادة)
-            privateNoteMessage = itemView.findViewById(R.id.private_note_card_view_message_tv) ;
-            //privateNoteTime = itemView.findViewById(R.id.private_note_card_view_time_tv) ; //time ago
-            privateNoteStartDate = itemView.findViewById(R.id.private_note_card_view_receive_date_tv) ;
-
-        }
-    }
 
     @NonNull
     @Override
@@ -69,6 +55,7 @@ public class AdapterPrivateNotes extends  RecyclerView.Adapter<AdapterPrivateNot
 
         holder.privateNoteMessage.setText(message);
         holder.privateNoteStartDate.setText(start_date);
+
     }
 
     @Override
@@ -76,4 +63,19 @@ public class AdapterPrivateNotes extends  RecyclerView.Adapter<AdapterPrivateNot
         return privateNotes.size();
     }
 
+
+    public class ViewHolderPrivateNote extends RecyclerView.ViewHolder{
+
+        TextView privateNoteSubject , privateNoteMessage , privateNoteStartDate , privateNoteAgoTime ;
+
+        public ViewHolderPrivateNote(@NonNull View itemView) {
+            super(itemView);
+
+            // privateNoteSubject = itemView.findViewById(R.id.private_note_card_view_subject_tv) ; //the subject type (المادة)
+            privateNoteMessage = itemView.findViewById(R.id.private_note_card_view_message_tv) ;
+            //privateNoteTime = itemView.findViewById(R.id.private_note_card_view_time_tv) ; //time ago
+            privateNoteStartDate = itemView.findViewById(R.id.private_note_card_view_receive_date_tv) ;
+
+        }
+    }
 }
