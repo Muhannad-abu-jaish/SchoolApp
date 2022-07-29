@@ -13,6 +13,7 @@ import com.example.project_2_student.Constant.CONSTANT;
 import com.example.project_2_student.Controller.AdapterGeneralNotes;
 import com.example.project_2_student.Models.API;
 import com.example.project_2_student.Models.GeneralNotes;
+import com.example.project_2_student.Models.GeneralNotesDB;
 import com.example.project_2_student.R;
 
 import java.io.IOException;
@@ -24,9 +25,10 @@ import retrofit2.Response;
 
 public class GeneralNote extends AppCompatActivity  {
 
-    ArrayList<GeneralNotes> public_adverts_models = new ArrayList<>();
+    ArrayList<GeneralNotes> public_adverts_models;
     RecyclerView recyclerView;
-    AdapterGeneralNotes adapter_adverts_public , adapter_adverts_private;
+    AdapterGeneralNotes adapter_adverts_public ;
+    GeneralNotesDB generalNotesDB ;
     DrawerLayout drawerLayout;
     String myToken;
     SharedPreferences sharedPreferences;
@@ -51,7 +53,7 @@ public class GeneralNote extends AppCompatActivity  {
                     public void onResponse(Call<ArrayList<GeneralNotes>> call, Response<ArrayList<GeneralNotes>> response) {
                         if(response.isSuccessful()){
                             adapter_adverts_public.setGeneralNotes(response.body());
-                            setAdapter(adapter_adverts_public);
+                            setAdapterGeneralNote(adapter_adverts_public);
                         }else{
                             try {
                                 System.out.println("Error Statues !" + response.code() + "\t Error Body : " + response.errorBody().string());
@@ -66,18 +68,33 @@ public class GeneralNote extends AppCompatActivity  {
                     }
                 });
             }
+
     public void init(){
         recyclerView = findViewById(R.id.recycler_adverts);
         drawerLayout = findViewById(R.id.general_notes_drawer_layout);
-        adapter_adverts_private = new AdapterGeneralNotes();
+        generalNotesDB = new GeneralNotesDB(this) ;
+        public_adverts_models = generalNotesDB.getAllGeneralNotes() ;
         adapter_adverts_public = new AdapterGeneralNotes();
         sharedPreferences = getSharedPreferences("StudentData",MODE_PRIVATE);
         myToken = sharedPreferences.getString(LoginActivity.TOKEN,"");
-      }
-    public void setAdapter(AdapterGeneralNotes adapter_adverts){
+        System.out.println("Token = " + myToken);
+    }
+
+    public void setAdapterGeneralNote(AdapterGeneralNotes adapter_adverts){
         recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext(),RecyclerView.VERTICAL,false));
         recyclerView.setAdapter(adapter_adverts);
     }
+
+    public void addGeneralNoteToDataBase (Response<ArrayList<GeneralNotes>> response)
+    {
+        public_adverts_models = response.body();
+        for (int i = 0 ;i<public_adverts_models.size() ; i++)
+        {
+            generalNotesDB.addGeneralNote(public_adverts_models.get(i)) ;
+        }
+
+    }
+
 
     public void ClickMenu(View view)
     {
@@ -102,7 +119,7 @@ public class GeneralNote extends AppCompatActivity  {
     public void ClickAboutUs(View view)
     {
         //Recreate activity
-        MainParent.redirectActivity(this,AboutUs.class);
+        MainParent.redirectActivity(this , AboutUs.class);
     }//End of ClickAboutUs
 
     public void ClickPersonalProfile(View view)
