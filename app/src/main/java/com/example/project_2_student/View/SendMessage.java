@@ -76,7 +76,6 @@ public class SendMessage extends AppCompatActivity {
                                 toast.getView().setBackground(getResources().getDrawable(R.color.Pink));
                                 toast.show();
                                 textInputEditText_content.getText().clear();
-
                             }else{
                                 try {
                                     System.out.println("Error successfully : " + response.errorBody().string());
@@ -85,7 +84,6 @@ public class SendMessage extends AppCompatActivity {
                                 }
                             }
                         }
-
                         @Override
                         public void onFailure(Call<ResponseBody> call, Throwable t) {
                             System.out.println("error is" + t.getMessage());
@@ -96,8 +94,6 @@ public class SendMessage extends AppCompatActivity {
             }
         });
     }
-
-
     public void ClickMenu(View view)
     {
         //Open drawer
@@ -125,7 +121,9 @@ public class SendMessage extends AppCompatActivity {
         MainParent.redirectActivity(this , AboutUs.class);
         this.finish();
     }//End of ClickAboutUs
-
+    public void ClickGallery(View view){
+        MainParent.redirectActivity(this,Gallery_image.class);
+    }
     public void ClickPersonalProfile(View view)
     {
         //Redirect activity to dashboard
@@ -138,7 +136,9 @@ public class SendMessage extends AppCompatActivity {
         //Close app
         MainParent.logout(this);
     }//End of ClickLogout
-
+    public void ClickContactUs(View view){
+        MainParent.redirectActivity(this,Contact_us.class);
+    }
 
     @Override
     protected void onPause() {

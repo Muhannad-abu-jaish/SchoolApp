@@ -29,6 +29,7 @@ public class MainParent extends AppCompatActivity {
         clickOnSpecialNotes();
         clickOnCalendar();
         clickOnSendMessage();
+        clickOnFinalResult();
 
     }//End of onCreate
 
@@ -86,7 +87,7 @@ public class MainParent extends AppCompatActivity {
         main_parent_final_result.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                redirectActivity(MainParent.this,FinalResult.class);
             }
         });
     }
@@ -103,12 +104,17 @@ public class MainParent extends AppCompatActivity {
         });
     }
 
-
+    public void ClickContactUs(View view){
+        redirectActivity(this,Contact_us.class);
+    }
     public void ClickMenu(View view)
     {
         //Open Drawer
         openDrawer(drawerLayout);
     }
+     public void ClickGallery(View view){
+        redirectActivity(this,Gallery_image.class);
+     }
 
     public static void openDrawer(DrawerLayout drawerLayout)
     {

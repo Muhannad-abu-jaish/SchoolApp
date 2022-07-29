@@ -47,8 +47,12 @@ public class AboutUs extends AppCompatActivity {
         //Redirect activity to home
         MainParent.redirectActivity(this , MainParent.class);
     }//End of ClickHome
-
-
+    public void ClickGallery(View view){
+        MainParent.redirectActivity(this,Gallery_image.class);
+    }
+    public void ClickContactUs(View view){
+        MainParent.redirectActivity(this,Contact_us.class);
+    }
     public void ClickAboutUs(View view)
     {
         //Recreate activity

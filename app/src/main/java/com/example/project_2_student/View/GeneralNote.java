@@ -73,8 +73,7 @@ public class GeneralNote extends AppCompatActivity  {
         adapter_adverts_public = new AdapterGeneralNotes();
         sharedPreferences = getSharedPreferences("StudentData",MODE_PRIVATE);
         myToken = sharedPreferences.getString(LoginActivity.TOKEN,"");
-        System.out.println("Token = " + myToken);
-    }
+      }
     public void setAdapter(AdapterGeneralNotes adapter_adverts){
         recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext(),RecyclerView.VERTICAL,false));
         recyclerView.setAdapter(adapter_adverts);
@@ -103,7 +102,7 @@ public class GeneralNote extends AppCompatActivity  {
     public void ClickAboutUs(View view)
     {
         //Recreate activity
-        recreate();
+        MainParent.redirectActivity(this,AboutUs.class);
     }//End of ClickAboutUs
 
     public void ClickPersonalProfile(View view)
@@ -111,7 +110,12 @@ public class GeneralNote extends AppCompatActivity  {
         //Redirect activity to dashboard
         MainParent.redirectActivity(this , PersonalProfile.class);
     }//End of ClickDashboard
-
+    public void ClickGallery(View view){
+        MainParent.redirectActivity(this,Gallery_image.class);
+    }
+    public void ClickContactUs(View view){
+        MainParent.redirectActivity(this,Contact_us.class);
+    }
     public void ClickLogOut(View view)
     {
         //Close app
@@ -121,8 +125,7 @@ public class GeneralNote extends AppCompatActivity  {
 
     @Override
     protected void onPause() {
-        super.onPause();
-        //Close drawer
         MainParent.closeDrawer(drawerLayout);
-    }
+        super.onPause();
+        }
 }

@@ -135,7 +135,7 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:gravity="center_vertical"
-
+        android:onClick="ClickContactUs"
         >
 
         <!-- android:onClick="ClickHonoraryBoard"-->
@@ -145,7 +145,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="@string/HONORARY_BOARD"
+            android:text="Contact us"
             android:padding="12dp"
             android:layout_marginStart="16dp"/>
 
@@ -154,7 +154,7 @@
             android:layout_width="32dp"
             android:layout_height="32dp"
             android:layout_marginEnd="48dp"
-            android:src="@drawable/star"/>
+            android:src="@drawable/contact_us"/>
 
         <!--  app:tint="@color/DarkMagenta"-->
 
@@ -190,6 +190,37 @@
         <!--  app:tint="@color/DarkMagenta"-->
 
     </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/main_nav_drawer_ll_gallery"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:onClick="ClickGallery"
+        tools:ignore="UsingOnClickInXml">
+
+        <TextView
+            android:id="@+id/main_nav_drawer_ll_gallery_tv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/gallery"
+            android:padding="12dp"
+            android:layout_marginStart="16dp"/>
+
+        <ImageView
+            android:id="@+id/main_nav_drawer_ll_gallery_iv"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_marginEnd="48dp"
+            android:src="@drawable/gallery"/>
+
+        <!--  app:tint="@color/DarkMagenta"-->
+
+    </LinearLayout>
+
+
 
 
     <LinearLayout

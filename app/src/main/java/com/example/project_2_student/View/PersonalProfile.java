@@ -140,8 +140,12 @@ public class PersonalProfile extends AppCompatActivity {
         //Recreate activity
         MainParent.redirectActivity(this , AboutUs.class);
     }//End of ClickAboutUs
-
-
+    public void ClickGallery(View view){
+        MainParent.redirectActivity(this,Gallery_image.class);
+    }
+    public void ClickContactUs(View view){
+        MainParent.redirectActivity(this,Contact_us.class);
+    }
 
     public void ClickPersonalProfile(View view)
     {

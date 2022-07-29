@@ -138,7 +138,12 @@ public class PrivateNote extends AppCompatActivity {
         MainParent.redirectActivity(this , PersonalProfile.class);
         this.finish();
     }//End of ClickDashboard
-
+    public void ClickGallery(View view){
+        MainParent.redirectActivity(this,Gallery_image.class);
+    }
+    public void ClickContactUs(View view){
+        MainParent.redirectActivity(this,Contact_us.class);
+    }
     public void ClickLogOut(View view)
     {
         //Close app
