@@ -9,6 +9,7 @@ import android.content.SharedPreferences;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.TextView;
 
 import com.example.project_2_student.Constant.CONSTANT;
 import com.example.project_2_student.Controller.AdapterGeneralNotes;
@@ -36,7 +37,7 @@ public class PrivateNote extends AppCompatActivity {
     DrawerLayout drawerLayout;
     String myToken;
     SharedPreferences sharedPreferences;
-
+    TextView num_notification;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -82,9 +83,13 @@ public class PrivateNote extends AppCompatActivity {
         recyclerView = findViewById(R.id.private_note_recycler_adverts);
         drawerLayout = findViewById(R.id.private_notes_drawer_layout);
         adapterPrivateNotes = new AdapterPrivateNotes(this , privateNotes);
-        sharedPreferences = getSharedPreferences("StudentData",MODE_PRIVATE);
+        sharedPreferences = getSharedPreferences(LoginActivity.STUDENT_DATA_DB,MODE_PRIVATE);
         myToken = sharedPreferences.getString(LoginActivity.TOKEN,"");
-
+        num_notification = findViewById(R.id.num_notification);
+        if(!sharedPreferences.getString(LoginActivity.NUM_NOTIFICATION,"").equals("0")){
+            num_notification.setVisibility(View.VISIBLE);
+            num_notification.setText(sharedPreferences.getString(LoginActivity.NUM_NOTIFICATION,""));
+        }
         System.out.println("Token = " + myToken) ;
         setAdapterPrivateNotes(adapterPrivateNotes) ;
     }

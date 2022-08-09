@@ -26,5 +26,9 @@ public interface API {
     public Call<ArrayList<Program>> show_week_program(@Path("section")int sectionId ) ;
     @GET("/show-private-note")
     public Call<ArrayList<PrivateNotes>> PRIVATE_NOTES_CALL(@Header("Authorization") String token) ;
+    @GET("/showAbcenseNote")
+    public Call<ArrayList<Absence>> AbsenceWarning(@Header("Authorization") String token);
+    @GET("/see_limpidityie")
+    public Call<Limpidityie> getLimpidityie(@Header("Authorization") String token);
 
 }

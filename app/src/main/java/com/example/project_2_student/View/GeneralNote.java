@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.TextView;
 
 import com.example.project_2_student.Constant.CONSTANT;
 import com.example.project_2_student.Controller.AdapterGeneralNotes;
@@ -32,6 +33,7 @@ public class GeneralNote extends AppCompatActivity  {
     DrawerLayout drawerLayout;
     String myToken;
     SharedPreferences sharedPreferences;
+    TextView num_notification;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -75,9 +77,13 @@ public class GeneralNote extends AppCompatActivity  {
         generalNotesDB = new GeneralNotesDB(this) ;
         public_adverts_models = generalNotesDB.getAllGeneralNotes() ;
         adapter_adverts_public = new AdapterGeneralNotes();
-        sharedPreferences = getSharedPreferences("StudentData",MODE_PRIVATE);
+        sharedPreferences = getSharedPreferences(LoginActivity.STUDENT_DATA_DB,MODE_PRIVATE);
         myToken = sharedPreferences.getString(LoginActivity.TOKEN,"");
-        System.out.println("Token = " + myToken);
+        num_notification = findViewById(R.id.num_notification);
+        if(!sharedPreferences.getString(LoginActivity.NUM_NOTIFICATION,"").equals("0")){
+            num_notification.setVisibility(View.VISIBLE);
+            num_notification.setText(sharedPreferences.getString(LoginActivity.NUM_NOTIFICATION,""));
+        }
     }
 
     public void setAdapterGeneralNote(AdapterGeneralNotes adapter_adverts){

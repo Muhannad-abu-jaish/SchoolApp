@@ -5,17 +5,21 @@ import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import com.example.project_2_student.R;
 
 public class Contact_us extends AppCompatActivity {
  DrawerLayout drawerLayout ;
  LinearLayout facebook , twitter , website;
-    @Override
+ TextView num_notification;
+ SharedPreferences sharedPreferences;
+ @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_contact_us);
@@ -61,6 +65,12 @@ public class Contact_us extends AppCompatActivity {
         facebook = findViewById(R.id.link_facebook);
         twitter = findViewById(R.id.link_twitter);
         website = findViewById(R.id.link_website);
+        sharedPreferences = getSharedPreferences(LoginActivity.STUDENT_DATA_DB,MODE_PRIVATE);
+        num_notification = findViewById(R.id.num_notification);
+        if(!sharedPreferences.getString(LoginActivity.NUM_NOTIFICATION,"").equals("0")){
+            num_notification.setVisibility(View.VISIBLE);
+            num_notification.setText(sharedPreferences.getString(LoginActivity.NUM_NOTIFICATION,""));
+        }
     }
     public void ClickContactUs(View view){
       recreate();

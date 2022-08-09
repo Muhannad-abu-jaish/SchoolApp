@@ -7,6 +7,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.provider.ContactsContract;
 import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.project_2_student.Constant.CONSTANT;
@@ -32,6 +33,7 @@ public class SendMessage extends AppCompatActivity {
     MaterialButton materialButton_send ;
     DrawerLayout drawerLayout ;
     SharedPreferences sharedPreferences ;
+    TextView num_notification;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,7 +48,12 @@ public class SendMessage extends AppCompatActivity {
         textInputEditText_content = findViewById(R.id.send_message_content_text_input_et) ;
         materialButton_send = findViewById(R.id.send_message_send_btn) ;
         drawerLayout = findViewById(R.id.send_message_drawer_layout) ;
-        sharedPreferences = getSharedPreferences("StudentData" ,MODE_PRIVATE);
+        sharedPreferences = getSharedPreferences(LoginActivity.STUDENT_DATA_DB ,MODE_PRIVATE);
+        num_notification = findViewById(R.id.num_notification);
+        if(!sharedPreferences.getString(LoginActivity.NUM_NOTIFICATION,"").equals("0")){
+            num_notification.setVisibility(View.VISIBLE);
+            num_notification.setText(sharedPreferences.getString(LoginActivity.NUM_NOTIFICATION,""));
+        }
 
     }
 

@@ -12,7 +12,7 @@
     <RelativeLayout
         android:id="@+id/login_rl_logo"
         android:layout_width="match_parent"
-        android:layout_height="150dp"
+        android:layout_height="@dimen/_150sdp"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent">
 
@@ -20,7 +20,7 @@
             android:id="@+id/login_rl_logo_iv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:padding="10dp"
+            android:padding="@dimen/_10sdp"
             android:src="@drawable/mainlogo" />
     </RelativeLayout>
 

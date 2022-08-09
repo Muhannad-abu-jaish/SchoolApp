@@ -36,6 +36,7 @@ public class LoginActivity extends AppCompatActivity {
     TextInputEditText email_et,password_et;
     TextView forgotPassword_tv;
     SharedPreferences sharedPreferences;
+    public static final String NUM_NOTIFICATION = "num_notification";
     public static final String STUDENT_DATA_DB = "StudentData";
     public static final String FIRST_NAME="first_name";
     public static final String LAST_NAME="last_name";
@@ -86,6 +87,13 @@ public class LoginActivity extends AppCompatActivity {
         password_et=findViewById(R.id.login_ll_1_et_2_password);
         forgotPassword_tv=findViewById(R.id.login_ll_1_tv_forgot_password);
         sharedPreferences = getSharedPreferences(LoginActivity.STUDENT_DATA_DB,MODE_PRIVATE);
+        if(sharedPreferences.getString(NUM_NOTIFICATION,"").isEmpty()){
+            SharedPreferences.Editor editor = sharedPreferences.edit();
+            editor.putString(NUM_NOTIFICATION,"0");
+            editor.apply();
+        }
+
+
         if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
             NotificationChannel channel = new NotificationChannel("notification_channel", "notification_channel", NotificationManager.IMPORTANCE_DEFAULT);
             NotificationManager manager = getSystemService(NotificationManager.class);

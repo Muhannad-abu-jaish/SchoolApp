@@ -8,9 +8,11 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import com.example.project_2_student.R;
 
@@ -18,6 +20,9 @@ public class MainParent extends AppCompatActivity {
     DrawerLayout drawerLayout;
     LinearLayout main_parent_calendar , main_parent_general_notes , main_parent_special_notes ;
     LinearLayout main_parent_final_result , main_parent_sends_message ;
+    TextView num_notification;
+    SharedPreferences sharedPreferences;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,6 +48,12 @@ public class MainParent extends AppCompatActivity {
         main_parent_special_notes=findViewById(R.id.main_parent_ll_ll1_ll2_ll2_special_notes) ;
         main_parent_final_result=findViewById(R.id.main_parent_ll_ll1_ll3_ll3_final_result) ;
         main_parent_sends_message=findViewById(R.id.main_parent_ll2_ll1_ll2_ll2_sends_message) ;
+        num_notification = findViewById(R.id.num_notification);
+        sharedPreferences = getSharedPreferences(LoginActivity.STUDENT_DATA_DB, MODE_PRIVATE);
+        if(!sharedPreferences.getString(LoginActivity.NUM_NOTIFICATION,"").equals("0")){
+            num_notification.setVisibility(View.VISIBLE);
+            num_notification.setText(sharedPreferences.getString(LoginActivity.NUM_NOTIFICATION,""));
+        }
     }//End of init
 
     public void clickOnCalendar()
@@ -104,6 +115,9 @@ public class MainParent extends AppCompatActivity {
         });
     }
 
+    public void ClickAbsenceWarning(View view){
+        redirectActivity(this,Absence_Warning.class);
+    }
     public void ClickContactUs(View view){
         redirectActivity(this,Contact_us.class);
     }

@@ -7,6 +7,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -17,7 +18,7 @@ public class PersonalProfile extends AppCompatActivity {
 
 
     DrawerLayout drawerLayout;
-
+    TextView num_notification;
     SharedPreferences sharedPreferences ;
     SharedPreferences.Editor editor;
 
@@ -43,9 +44,8 @@ public class PersonalProfile extends AppCompatActivity {
     {
         drawerLayout = findViewById(R.id.personal_profile_drawer_layout);
 
-        sharedPreferences = getSharedPreferences("StudentData",MODE_PRIVATE);
+        sharedPreferences = getSharedPreferences(LoginActivity.STUDENT_DATA_DB,MODE_PRIVATE);
         editor = sharedPreferences.edit();
-
         personal_profile_move_back_iv =(ImageView) findViewById(R.id.personal_profile_ll_move_back);
         clickToBack();
 
@@ -60,6 +60,11 @@ public class PersonalProfile extends AppCompatActivity {
         personal_profile_admission_date_tv=findViewById(R.id.personal_profile_rl_cv_ll6_admission_date_tv);
         personal_profile_age_tv=findViewById(R.id.personal_profile_rl_cv_ll7_age_tv);
         personal_profile_evaluate_student = findViewById(R.id.personal_profile_evaluate_student);
+        num_notification = findViewById(R.id.num_notification);
+        if(!sharedPreferences.getString(LoginActivity.NUM_NOTIFICATION,"").equals("0")){
+            num_notification.setVisibility(View.VISIBLE);
+            num_notification.setText(sharedPreferences.getString(LoginActivity.NUM_NOTIFICATION,""));
+        }
 
     }//End on init
 
