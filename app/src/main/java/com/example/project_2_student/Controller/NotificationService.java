@@ -4,6 +4,7 @@ import android.annotation.SuppressLint;
 import android.app.PendingIntent;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.media.RingtoneManager;
 import android.net.Uri;
 
 import androidx.annotation.NonNull;
@@ -33,6 +34,7 @@ SharedPreferences sharedPreferences;
         }
     }
     public void notify(String title, String message) throws IOException {
+        Uri soundUri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
         SharedPreferences.Editor editor = sharedPreferences.edit();
         int numNotification = Integer.parseInt(sharedPreferences.getString(LoginActivity.NUM_NOTIFICATION,"0"));
         numNotification++;
@@ -53,6 +55,7 @@ SharedPreferences sharedPreferences;
                 .setVibrate(new long[]{1000, 1000, 1000,
                         1000, 1000})
                 .setOnlyAlertOnce(true)
+                .setSound(soundUri)
                 .setContentIntent(pendingIntent);
         NotificationManagerCompat managerCompat = NotificationManagerCompat.from(getApplicationContext());
         managerCompat.notify(123, builder.build());

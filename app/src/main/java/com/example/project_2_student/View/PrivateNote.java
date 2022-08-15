@@ -9,6 +9,7 @@ import android.content.SharedPreferences;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.project_2_student.Constant.CONSTANT;
@@ -38,6 +39,8 @@ public class PrivateNote extends AppCompatActivity {
     String myToken;
     SharedPreferences sharedPreferences;
     TextView num_notification;
+    Button Retry;
+    View noConnection;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,8 +52,22 @@ public class PrivateNote extends AppCompatActivity {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-    }
+        RetryConnection();
 
+    }
+    private void RetryConnection(){
+        Retry.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                noConnection.setVisibility(View.GONE);
+                try {
+                    GET_ANNOUNCEMENT();
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+    }
 
     private void GET_ANNOUNCEMENT() throws InterruptedException {
         API api = CONSTANT.CREATING_CALL();
@@ -59,9 +76,14 @@ public class PrivateNote extends AppCompatActivity {
             @Override
             public void onResponse(Call<ArrayList<PrivateNotes>> call, Response<ArrayList<PrivateNotes>> response) {
                 if(response.isSuccessful()){
-                    adapterPrivateNotes.setPrivateNotes(response.body());
-                    setAdapterPrivateNotes(adapterPrivateNotes);
-                    addPrivateNoteToDataBase(response) ;
+                    if(response.body().size()==0){
+                        noConnection.setVisibility(View.VISIBLE);
+                    }
+                    else{
+                        adapterPrivateNotes.setPrivateNotes(response.body());
+                        setAdapterPrivateNotes(adapterPrivateNotes);
+                        addPrivateNoteToDataBase(response);
+                    }
 
                 }else{
                     try {
@@ -74,11 +96,14 @@ public class PrivateNote extends AppCompatActivity {
             @Override
             public void onFailure(Call<ArrayList<PrivateNotes>> call, Throwable t) {
                 System.out.println("Error : " + t.getMessage());
+                noConnection.setVisibility(View.VISIBLE);
             }
         });
     }
     public void init(){
-         privateNotesDB = new PrivateNotesDB(this);
+        Retry = findViewById(R.id.retry_connection);
+        noConnection = findViewById(R.id.view_NoConnection);
+        privateNotesDB = new PrivateNotesDB(this);
         privateNotes = privateNotesDB.getAllPrivateNotes();
         recyclerView = findViewById(R.id.private_note_recycler_adverts);
         drawerLayout = findViewById(R.id.private_notes_drawer_layout);

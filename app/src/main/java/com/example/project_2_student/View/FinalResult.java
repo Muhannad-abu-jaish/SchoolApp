@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 
 import com.example.project_2_student.Constant.CONSTANT;
 import com.example.project_2_student.Models.API;
@@ -28,16 +30,26 @@ public class FinalResult extends AppCompatActivity {
   PDFView pdfView;
   String token;
   SharedPreferences sharedPreferences;
-    String pdfurl = "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf";
-    @Override
+  Button Retry;
+  View noConnection;
+  @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_final_result);
 
         init();
         getData();
+        RetryConnection();
     }
-
+    private void RetryConnection(){
+        Retry.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                noConnection.setVisibility(View.GONE);
+                getData();
+            }
+        });
+    }
     private void getData() {
         API api = CONSTANT.CREATING_CALL();
         Call<Limpidityie> limpidityieCall = api.getLimpidityie(token);
@@ -45,7 +57,14 @@ public class FinalResult extends AppCompatActivity {
             @Override
             public void onResponse(Call<Limpidityie> call, Response<Limpidityie> response) {
                 if(response.isSuccessful()){
-                new RetrivePDFfromUrl().execute(response.body().getLimpidityies());
+                    if(response.body()!=null){
+                        noConnection.setVisibility(View.VISIBLE);
+                    }
+                    else
+                    {
+                        pdfView.setVisibility(View.VISIBLE);
+                        new RetrivePDFfromUrl().execute(response.body().getLimpidityies());
+                    }
                 }
                 else{
                     try {
@@ -59,11 +78,16 @@ public class FinalResult extends AppCompatActivity {
             @Override
             public void onFailure(Call<Limpidityie> call, Throwable t) {
                 System.out.println("Error : " +  t.getMessage());
+                pdfView.setVisibility(View.GONE);
+                noConnection.setVisibility(View.VISIBLE);
+
             }
         });
     }
 
     private void init(){
+        Retry = findViewById(R.id.retry_connection);
+        noConnection = findViewById(R.id.view_NoConnection);
         pdfView = findViewById(R.id.idPDFView);
         sharedPreferences = getSharedPreferences(LoginActivity.STUDENT_DATA_DB,MODE_PRIVATE);
         token = sharedPreferences.getString(LoginActivity.TOKEN,"");

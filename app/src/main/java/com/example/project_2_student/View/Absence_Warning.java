@@ -6,6 +6,9 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.text.Layout;
+import android.view.View;
+import android.widget.Button;
 
 import com.example.project_2_student.Constant.CONSTANT;
 import com.example.project_2_student.Controller.AdapterAbsenceWarning;
@@ -26,14 +29,25 @@ public class Absence_Warning extends AppCompatActivity {
    ArrayList<Absence> absences;
    SharedPreferences sharedPreferences;
    String token ;
+    View noConnection;
+    Button Retry;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_absence__warning);
         init();
         getData();
+        RetryConnection();
     }
-
+    private void RetryConnection(){
+        Retry.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                noConnection.setVisibility(View.GONE);
+                getData();
+            }
+        });
+    }
     private void getData() {
      API api = CONSTANT.CREATING_CALL();
         Call<ArrayList<Absence>> arrayListCall = api.AbsenceWarning(token);
@@ -41,7 +55,13 @@ public class Absence_Warning extends AppCompatActivity {
             @Override
             public void onResponse(Call<ArrayList<Absence>> call, Response<ArrayList<Absence>> response) {
                 if(response.isSuccessful()){
-                    setAdapter(response.body());
+                    if(response.body().size()==0){
+                        noConnection.setVisibility(View.VISIBLE);
+                    }
+                    else
+                    {
+                        setAdapter(response.body());
+                    }
                 }
                 else{
                     try {
@@ -55,9 +75,9 @@ public class Absence_Warning extends AppCompatActivity {
             @Override
             public void onFailure(Call<ArrayList<Absence>> call, Throwable t) {
                 System.out.println("Error : " + t.getMessage());
+                noConnection.setVisibility(View.VISIBLE);
             }
         });
-
     }
 
     private void setAdapter(ArrayList<Absence> body) {
@@ -67,6 +87,8 @@ public class Absence_Warning extends AppCompatActivity {
     }
 
     private  void init(){
+        Retry = findViewById(R.id.retry_connection);
+        noConnection = findViewById(R.id.view_NoConnection);
         adapterAbsenceWarning = new AdapterAbsenceWarning();
         absences = new ArrayList<>();
         recyclerView = findViewById(R.id.recycler_absence_warning);

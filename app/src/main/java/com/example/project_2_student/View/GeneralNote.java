@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.project_2_student.Constant.CONSTANT;
@@ -34,6 +35,8 @@ public class GeneralNote extends AppCompatActivity  {
     String myToken;
     SharedPreferences sharedPreferences;
     TextView num_notification;
+    Button Retry;
+    View noConnection;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +48,20 @@ public class GeneralNote extends AppCompatActivity  {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
+        RetryConnection();
+    }
+    private void RetryConnection(){
+        Retry.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                noConnection.setVisibility(View.GONE);
+                try {
+                    GET_ANNOUNCEMENT();
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
     }
 
     private void GET_ANNOUNCEMENT() throws InterruptedException {
@@ -54,8 +71,13 @@ public class GeneralNote extends AppCompatActivity  {
                     @Override
                     public void onResponse(Call<ArrayList<GeneralNotes>> call, Response<ArrayList<GeneralNotes>> response) {
                         if(response.isSuccessful()){
-                            adapter_adverts_public.setGeneralNotes(response.body());
-                            setAdapterGeneralNote(adapter_adverts_public);
+                            if(response.body().size()==0){
+                                noConnection.setVisibility(View.VISIBLE);
+                            }
+                            else {
+                                adapter_adverts_public.setGeneralNotes(response.body());
+                                setAdapterGeneralNote(adapter_adverts_public);
+                            }
                         }else{
                             try {
                                 System.out.println("Error Statues !" + response.code() + "\t Error Body : " + response.errorBody().string());
@@ -67,11 +89,14 @@ public class GeneralNote extends AppCompatActivity  {
                     @Override
                     public void onFailure(Call<ArrayList<GeneralNotes>> call, Throwable t) {
                         System.out.println("Error : " + t.getMessage());
+                        noConnection.setVisibility(View.VISIBLE);
                     }
                 });
             }
 
     public void init(){
+        Retry = findViewById(R.id.retry_connection);
+        noConnection = findViewById(R.id.view_NoConnection);
         recyclerView = findViewById(R.id.recycler_adverts);
         drawerLayout = findViewById(R.id.general_notes_drawer_layout);
         generalNotesDB = new GeneralNotesDB(this) ;

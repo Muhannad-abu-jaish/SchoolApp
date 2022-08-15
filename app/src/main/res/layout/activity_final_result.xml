@@ -23,6 +23,9 @@
     app:layout_constraintTop_toBottomOf="@+id/include"
     android:id="@+id/text_final"
     android:textSize="@dimen/_45sdp"/>
+        <include layout="@layout/view_no_connection"
+            android:id="@+id/view_NoConnection"
+            android:visibility="gone"/>
 
     <!--PDF Viewer to display our PDF-->
         <com.github.barteksc.pdfviewer.PDFView
