@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.project_2_student.Constant.CONSTANT;
 import com.example.project_2_student.MainActivity;
@@ -140,6 +141,7 @@ public class LoginActivity extends AppCompatActivity {
                 }
                 else {
                     try {
+                        Toast.makeText(getApplicationContext(),response.errorBody().string(),Toast.LENGTH_LONG).show();
                         System.out.println("error successfully"+response.errorBody().string()+ response.code());
                     } catch (IOException e) {
                         e.printStackTrace();
@@ -149,7 +151,7 @@ public class LoginActivity extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<Student> call, Throwable t) {
-
+                Toast.makeText(getApplicationContext()," No Connection ",Toast.LENGTH_LONG).show();
                 System.out.println("error "+ t.getMessage());
 
 

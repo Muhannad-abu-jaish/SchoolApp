@@ -85,6 +85,7 @@ public class SendMessage extends AppCompatActivity {
                                 textInputEditText_content.getText().clear();
                             }else{
                                 try {
+                                    Toast.makeText(getApplicationContext(),response.errorBody().string(),Toast.LENGTH_LONG).show();
                                     System.out.println("Error successfully : " + response.errorBody().string());
                                 } catch (IOException e) {
                                     e.printStackTrace();
@@ -94,6 +95,7 @@ public class SendMessage extends AppCompatActivity {
                         @Override
                         public void onFailure(Call<ResponseBody> call, Throwable t) {
                             System.out.println("error is" + t.getMessage());
+                            Toast.makeText(getApplicationContext()," No connection ",Toast.LENGTH_LONG).show();
 
                         }
                     });

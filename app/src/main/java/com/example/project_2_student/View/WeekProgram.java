@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.example.project_2_student.Constant.CONSTANT;
 import com.example.project_2_student.Models.API;
@@ -47,6 +48,7 @@ public class WeekProgram extends AppCompatActivity {
                   generateWeekProgram(response.body());
               }else{
                   try {
+                      Toast.makeText(getApplicationContext(),response.errorBody().string(),Toast.LENGTH_LONG).show();
                       System.err.println("Error successfully : " + response.errorBody().string());
                   } catch (IOException e) {
                       e.printStackTrace();
@@ -56,6 +58,7 @@ public class WeekProgram extends AppCompatActivity {
             @Override
             public void onFailure(Call<ArrayList<Program>> call, Throwable t) {
                 System.err.println("Error : "+ t.getMessage());
+                Toast.makeText(getApplicationContext()," NO Connection ",Toast.LENGTH_LONG).show();
             }
         });
     }

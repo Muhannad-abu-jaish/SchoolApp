@@ -49,6 +49,7 @@
             android:exported="true" />
         <activity
             android:name=".View.WeekProgram"
+            android:screenOrientation="landscape"
             android:exported="true" />
         <activity
             android:name=".View.LoginActivity"

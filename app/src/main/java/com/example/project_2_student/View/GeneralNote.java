@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.project_2_student.Constant.CONSTANT;
 import com.example.project_2_student.Controller.AdapterGeneralNotes;
@@ -80,6 +81,7 @@ public class GeneralNote extends AppCompatActivity  {
                             }
                         }else{
                             try {
+                                Toast.makeText(getApplicationContext(),response.errorBody().string(),Toast.LENGTH_LONG).show();
                                 System.out.println("Error Statues !" + response.code() + "\t Error Body : " + response.errorBody().string());
                             } catch (IOException e) {
                                 e.printStackTrace();

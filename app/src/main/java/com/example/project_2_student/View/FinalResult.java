@@ -7,6 +7,7 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.example.project_2_student.Constant.CONSTANT;
 import com.example.project_2_student.Models.API;
@@ -68,6 +69,7 @@ public class FinalResult extends AppCompatActivity {
                 }
                 else{
                     try {
+                        Toast.makeText(getApplicationContext(),response.errorBody().string(),Toast.LENGTH_LONG).show();
                         System.out.println("Error Successfully : " + response.errorBody().string());
                     } catch (IOException e) {
                         e.printStackTrace();
