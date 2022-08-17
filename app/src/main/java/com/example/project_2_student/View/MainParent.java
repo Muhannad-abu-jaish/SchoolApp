@@ -22,6 +22,7 @@ public class MainParent extends AppCompatActivity {
     LinearLayout main_parent_final_result , main_parent_sends_message ;
     TextView num_notification;
     SharedPreferences sharedPreferences;
+    TextView name_tool_bar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,6 +44,8 @@ public class MainParent extends AppCompatActivity {
     {
         drawerLayout = findViewById(R.id.main_parent_drawer_layout);
 
+        name_tool_bar = findViewById(R.id.main_toolbar_activity_name_tv) ;
+        name_tool_bar.setText(R.string.CreativityText);
         main_parent_calendar=findViewById(R.id.main_parent_ll2_ll1_ll1_ll1_calender) ;
         main_parent_general_notes=findViewById(R.id.main_parent_ll_ll1_ll1_ll1_general_notes) ;
         main_parent_special_notes=findViewById(R.id.main_parent_ll_ll1_ll2_ll2_special_notes) ;

@@ -4,7 +4,9 @@
     android:layout_height="wrap_content"
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
-    tools:context=".View.WeekProgram">
+    tools:context=".View.WeekProgram"
+    >
+
 
     <TextView
         android:id="@+id/textView1"

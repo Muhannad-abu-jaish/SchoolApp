@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
+import android.widget.TextView;
 
 import com.example.project_2_student.Constant.CONSTANT;
 import com.example.project_2_student.Models.API;
@@ -31,6 +32,10 @@ public class FinalResult extends AppCompatActivity {
   PDFView pdfView;
   String token;
   SharedPreferences sharedPreferences;
+  TextView name_tool_bar ;
+    String pdfurl = "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf";
+
+
   Button Retry;
   View noConnection;
   @Override
@@ -88,6 +93,10 @@ public class FinalResult extends AppCompatActivity {
     }
 
     private void init(){
+       // pdfView = findViewById(R.id.idPDFView);
+        name_tool_bar = findViewById(R.id.main_toolbar_activity_name_tv) ;
+        name_tool_bar.setText(R.string.MAIN_FINAL_RESULT);
+
         Retry = findViewById(R.id.retry_connection);
         noConnection = findViewById(R.id.view_NoConnection);
         pdfView = findViewById(R.id.idPDFView);

@@ -10,49 +10,42 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        >
 
 
         <LinearLayout
             android:id="@+id/personal_profile_ll"
             android:layout_width="match_parent"
-            android:layout_height="250dp"
-            android:orientation="vertical"
-            android:background="@drawable/personal_profile_top_bg">
+            android:layout_height="300dp"
+            android:background="@drawable/main_parent_bg"
+            android:orientation="vertical">
 
 
-            <include
-                layout="@layout/main_toolbar"/>
+            <include layout="@layout/main_toolbar" />
 
-            <ImageView
-                android:id="@+id/personal_profile_ll_move_back"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_alignParentStart="true"
-
-                android:paddingRight="10dp"
-                android:src="@drawable/personal_profile_previous_arrow_ic" />
 
         </LinearLayout>
 
     <LinearLayout
 
         android:id="@+id/personal_profile_ll2"
-        android:layout_width="match_parent"
-        android:layout_height="310dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginStart="2dp"
         android:layout_marginTop="130dp"
-        android:gravity="center">
+        android:layout_centerHorizontal="true"
+        >
 
-        <androidx.cardview.widget.CardView
+
+        <com.google.android.material.card.MaterialCardView
             android:id="@+id/personal_profile_ll2_cv"
             android:layout_width="370dp"
             android:layout_height="260dp"
-            android:outlineAmbientShadowColor="@color/black"
-            android:outlineSpotShadowColor="@color/black"
-            app:cardCornerRadius="19sp">
+            app:strokeColor="@color/DarkMagenta"
+            app:strokeWidth="2dp"
+            android:backgroundTint="@color/Lgary"
+            app:cardCornerRadius="40sp">
 
             <ImageView
                 android:id="@+id/personal_profile_ll2_student_photo_iv"
@@ -69,7 +62,7 @@
                 android:layout_marginTop="110dp"
                 android:gravity="center"
                 android:text="Student Name"
-                android:textColor="@color/black"
+                android:textColor="@color/DarkMagenta"
                 android:textStyle="bold|italic" />
 
             <LinearLayout
@@ -94,6 +87,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="145dp"
                         android:text="Grade :"
+                        android:textColor="@color/DarkMagenta"
                         android:layout_marginStart="10dp"
                         android:layout_marginEnd="10dp"
                         android:textStyle="bold" />
@@ -104,6 +98,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="145dp"
                         android:text="Grade Name or number"
+                        android:textColor="@color/DarkMagenta"
                         android:layout_marginStart="1dp"
                         android:layout_marginEnd="10dp"
                         />
@@ -124,6 +119,7 @@
                         android:layout_height="wrap_content"
                         android:text="Division : "
                         android:textStyle="bold"
+                        android:textColor="@color/DarkMagenta"
                         android:layout_marginStart="10dp"
                         android:layout_marginEnd="10dp"
                         />
@@ -133,6 +129,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Division Number"
+                        android:textColor="@color/DarkMagenta"
                         android:layout_marginStart="1dp"
                         android:layout_marginEnd="10dp"/>
 
@@ -143,11 +140,11 @@
 
             <View
                 android:layout_width="match_parent"
-                android:layout_height="2sp"
+                android:layout_height="2dp"
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="190dp"
                 android:layout_marginEnd="20dp"
-                android:background="@color/FireBrick" />
+                android:background="@color/DarkMagenta" />
 
 
             <TextView
@@ -156,7 +153,8 @@
                 android:layout_marginTop="195dp"
                 android:gravity="center"
                 android:id="@+id/personal_profile_evaluate_student"
-                android:text="Student Evaluation" />
+                android:text="Student Evaluation"
+                android:textColor="@color/DarkMagenta"/>
 
             <TextView
                 android:layout_width="match_parent"
@@ -164,260 +162,243 @@
                 android:layout_marginTop="220dp"
                 android:id="@+id/personal_profile_rank_student"
                 android:gravity="center"
+                android:textColor="@color/DarkMagenta"
                 android:text="ٍStudent Ranking" />
 
-        </androidx.cardview.widget.CardView>
+        </com.google.android.material.card.MaterialCardView>
 
     </LinearLayout>
 
-    <RelativeLayout
-        android:id="@+id/personal_profile_rl"
-        android:layout_below="@+id/personal_profile_ll2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
 
 
-        <androidx.cardview.widget.CardView
-            android:id="@+id/personal_profile_rl_cv"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_alignParentStart="true"
-            android:layout_centerVertical="true"
-            android:layout_marginStart="0dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginBottom="0dp"
-            android:defaultFocusHighlightEnabled="true"
-            android:outlineAmbientShadowColor="@color/FireBrick"
-            android:outlineProvider="background"
-            android:outlineSpotShadowColor="@color/FireBrick"
-            app:cardCornerRadius="40sp">
+        <RelativeLayout
+            android:id="@+id/personal_profile_rl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/personal_profile_ll2"
+            android:layout_centerHorizontal="true"
+          >
 
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-                <!-- <LinearLayout
-                android:id="@+id/personal_profile_rl_cv_ll"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="14dp"
-                    android:paddingStart="23dp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="19dp"
-                    android:paddingStart="30dp"
-                    android:text="phone number :"
-                    android:textColor="@color/black"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/personal_profile_rl_cv_ll_phone_number_tv"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="19dp"
-                    android:paddingStart="10dp"
-                    android:text="+91 92265300001"
-                    android:textColor="@color/black" />
-
-            </LinearLayout>-->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/personal_profile_rl_cv"
+                android:layout_width="370dp"
+                android:layout_height="260dp"
+                android:layout_centerInParent="true"
+                android:layout_marginBottom="160dp"
+                android:backgroundTint="@color/Lgary"
+                app:cardCornerRadius="40sp"
+                app:strokeColor="@color/DarkMagenta"
+                app:strokeWidth="2dp">
 
                 <LinearLayout
-                    android:id="@+id/personal_profile_rl_cv_ll2"
                     android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="1"
-                    android:orientation="horizontal">
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:orientation="vertical">
 
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:paddingStart="23dp" />
+                    <LinearLayout
+                        android:id="@+id/personal_profile_rl_cv_ll2"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:paddingStart="30dp"
-                        android:text="User Name :"
-                        android:textColor="@color/black"
-                        android:textStyle="bold" />
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingStart="23dp"
+                            android:paddingEnd="1dp" />
 
-                    <TextView
-                        android:id="@+id/personal_profile_rl_cv_ll2_username_tv"
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingStart="30dp"
+                            android:paddingEnd="1dp"
+                            android:text="User Name :"
+                            android:textColor="@color/DarkMagenta"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/personal_profile_rl_cv_ll2_username_tv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingStart="10dp"
+                            android:paddingEnd="1dp"
+                            android:text="muhannad34"
+                            android:textColor="@color/DarkMagenta" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/personal_profile_rl_cv_ll3"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingStart="23dp"
+                            android:paddingEnd="1dp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingStart="30dp"
+                            android:paddingEnd="1dp"
+                            android:text="Password : "
+                            android:textColor="@color/DarkMagenta"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/personal_profile_rl_cv_ll3_password_tv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingStart="10dp"
+                            android:paddingEnd="1dp"
+                            android:text="32343"
+                            android:textColor="@color/DarkMagenta" />
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:id="@+id/personal_profile_rl_cv_ll4"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingStart="23dp"
+                            android:paddingEnd="1dp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingStart="30dp"
+                            android:paddingEnd="1dp"
+                            android:text="Birth Date : "
+                            android:textColor="@color/DarkMagenta"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/personal_profile_rl_cv_ll4_birth_date_tv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingStart="10dp"
+                            android:paddingEnd="1dp"
+                            android:text="2/3/2000"
+                            android:textColor="@color/DarkMagenta" />
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:id="@+id/personal_profile_rl_cv_ll5"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:paddingStart="10dp"
-                        android:text="muhannad34"
-                        android:textColor="@color/black" />
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:orientation="horizontal"
+                        android:paddingStart="23dp">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingStart="30dp"
+                            android:paddingEnd="1dp"
+                            android:text="Address : "
+                            android:textColor="@color/DarkMagenta"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/personal_profile_rl_cv_ll5_address_tv"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingStart="10dp"
+                            android:paddingEnd="1dp"
+                            android:text="Damascus "
+                            android:textColor="@color/DarkMagenta" />
+
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:id="@+id/personal_profile_rl_cv_ll6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingStart="23dp"
+                            android:paddingEnd="1dp" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingStart="30dp"
+                            android:paddingEnd="1dp"
+                            android:text="Admission Date : "
+                            android:textColor="@color/DarkMagenta" />
+
+                        <TextView
+                            android:id="@+id/personal_profile_rl_cv_ll6_admission_date_tv"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingStart="10dp"
+                            android:paddingEnd="1dp"
+                            android:text="2/3/2022"
+                            android:textColor="@color/DarkMagenta" />
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:id="@+id/personal_profile_rl_cv_ll7"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingStart="23dp"
+                            android:paddingEnd="1dp" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingStart="30dp"
+                            android:paddingEnd="1dp"
+                            android:text="Age : "
+                            android:textColor="@color/DarkMagenta"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/personal_profile_rl_cv_ll7_age_tv"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingStart="10dp"
+                            android:paddingEnd="1dp"
+                            android:text="18 Year "
+                            android:textColor="@color/DarkMagenta" />
+
+
+                    </LinearLayout>
 
                 </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
 
-                <LinearLayout
-                    android:id="@+id/personal_profile_rl_cv_ll3"
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="1"
-                    android:orientation="horizontal"
-                    >
+        </RelativeLayout>
 
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:paddingStart="23dp" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:paddingStart="30dp"
-                        android:text="Password : "
-                        android:textColor="@color/black"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:id="@+id/personal_profile_rl_cv_ll3_password_tv"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:paddingStart="10dp"
-                        android:text="32343"
-                        android:textColor="@color/black" />
-
-                </LinearLayout>
-
-
-                <LinearLayout
-                    android:id="@+id/personal_profile_rl_cv_ll4"
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="1"
-                    android:orientation="horizontal">
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:paddingStart="23dp" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:paddingStart="30dp"
-                        android:text="Birth Date : "
-                        android:textColor="@color/black"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:id="@+id/personal_profile_rl_cv_ll4_birth_date_tv"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:paddingStart="10dp"
-                        android:text="2/3/2000"
-                        android:textColor="@color/black" />
-
-                </LinearLayout>
-
-
-                <LinearLayout
-                    android:id="@+id/personal_profile_rl_cv_ll5"
-                    android:layout_width="wrap_content"
-                    android:layout_height="0dp"
-                    android:layout_weight="1"
-                    android:orientation="horizontal">
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:paddingStart="23dp" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:paddingStart="30dp"
-                        android:text="Address : "
-                        android:textColor="@color/black"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:id="@+id/personal_profile_rl_cv_ll5_address_tv"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:paddingStart="10dp"
-                        android:text="Damascus "
-                        android:textColor="@color/black" />
-
-
-                </LinearLayout>
-
-
-                <LinearLayout
-                    android:id="@+id/personal_profile_rl_cv_ll6"
-                    android:layout_width="wrap_content"
-                    android:layout_height="0dp"
-                    android:layout_weight="1"
-                    android:orientation="horizontal">
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:paddingStart="23dp" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:paddingStart="30dp"
-                        android:text="Admission Date : "
-                        android:textColor="@color/black" />
-
-                    <TextView
-                        android:id="@+id/personal_profile_rl_cv_ll6_admission_date_tv"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:paddingStart="10dp"
-                        android:text="2/3/2022"
-                        android:textColor="@color/black" />
-
-                </LinearLayout>
-
-
-                <LinearLayout
-                    android:id="@+id/personal_profile_rl_cv_ll7"
-                    android:layout_width="wrap_content"
-                    android:layout_height="0dp"
-                    android:layout_weight="1"
-                    android:orientation="horizontal">
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:paddingStart="23dp" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:paddingStart="30dp"
-                        android:text="Age : "
-                        android:textColor="@color/black"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:id="@+id/personal_profile_rl_cv_ll7_age_tv"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:paddingStart="10dp"
-                        android:text="18 Year "
-                        android:textColor="@color/black" />
-
-
-                </LinearLayout>
-
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
-
-    </RelativeLayout>
 
 
     </RelativeLayout>
@@ -431,6 +412,15 @@
         >
 
         <include layout="@layout/main_nav_drawer" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="0dp"
+            android:paddingStart="23dp" />
 
     </RelativeLayout>
 </androidx.drawerlayout.widget.DrawerLayout>

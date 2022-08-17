@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.widget.TextView;
 import android.text.Layout;
 import android.view.View;
 import android.widget.Button;
@@ -32,6 +33,7 @@ public class Absence_Warning extends AppCompatActivity {
    String token ;
     View noConnection;
     Button Retry;
+   TextView name_tool_bar ;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -91,6 +93,8 @@ public class Absence_Warning extends AppCompatActivity {
     private  void init(){
         Retry = findViewById(R.id.retry_connection);
         noConnection = findViewById(R.id.view_NoConnection);
+        name_tool_bar = findViewById(R.id.main_toolbar_activity_name_tv) ;
+        name_tool_bar.setText(R.string.ABSENCE_WARNING);
         adapterAbsenceWarning = new AdapterAbsenceWarning();
         absences = new ArrayList<>();
         recyclerView = findViewById(R.id.recycler_absence_warning);

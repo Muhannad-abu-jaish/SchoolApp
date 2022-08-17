@@ -14,7 +14,7 @@ public class AboutUs extends AppCompatActivity {
 
     DrawerLayout drawerLayout;
     SharedPreferences sharedPreferences;
-    TextView num_notification;
+    TextView num_notification , name_tool_bar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +29,9 @@ public class AboutUs extends AppCompatActivity {
 
     public void init()
     {
+        name_tool_bar = findViewById(R.id.main_toolbar_activity_name_tv) ;
+        name_tool_bar.setText(R.string.About_Us);
+
         sharedPreferences = getSharedPreferences(LoginActivity.STUDENT_DATA_DB,MODE_PRIVATE);
         num_notification = findViewById(R.id.num_notification);
         if(!sharedPreferences.getString(LoginActivity.NUM_NOTIFICATION,"").equals("0")) {

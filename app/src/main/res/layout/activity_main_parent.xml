@@ -18,21 +18,6 @@
             layout="@layout/main_toolbar"/>
 
 
-        <TextView
-            android:id="@+id/main_parent_creativity_tv"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/CreativityText"
-            android:textColor="#FFF"
-            android:textSize="22sp"
-            android:textStyle="bold|italic"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.497"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.108" />
-
         <ImageView
             android:id="@+id/main_parent_background_iv"
             android:layout_width="237dp"
@@ -42,17 +27,16 @@
             app:layout_constraintBottom_toTopOf="@+id/main_parent_ll"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/main_parent_creativity_tv"
-            app:layout_constraintVertical_bias="1.23" />
+            app:layout_constraintTop_toBottomOf="@+id/main_parent_creativity_tv" />
 
         <LinearLayout
             android:id="@+id/main_parent_ll"
             android:layout_width="match_parent"
-            android:layout_height="330dp"
+            android:layout_height="350dp"
             android:layout_marginStart="0dp"
             android:layout_marginEnd="0dp"
+            android:layout_marginBottom="70dp"
             android:orientation="vertical"
-            android:layout_marginBottom="40dp"
             android:background="@drawable/main_parent_bg_menu"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -66,7 +50,7 @@
                 android:layout_weight="2"
                 android:orientation="horizontal"
                 android:paddingTop="24dp"
-                android:paddingBottom="24dp">
+               >
 
                 <LinearLayout
                     android:id="@+id/main_parent_ll_ll1_ll1"
@@ -83,7 +67,7 @@
                         android:layout_height="120dp"
                         android:layout_marginStart="10dp"
                         android:layout_marginEnd="10dp"
-                        android:background="@drawable/main_parent_bg_green"
+                        android:background="@drawable/general_notes_card"
                         android:orientation="vertical"
                         android:paddingStart="10dp"
                         android:paddingEnd="10dp">
@@ -92,18 +76,18 @@
                             android:id="@+id/main_parent_ll_ll1_ll1_ll1_iv1"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginStart="1dp"
-                            android:layout_marginTop="12dp"
-                            android:layout_marginBottom="15dp"
-                            android:src="@drawable/checked" />
+                            android:layout_gravity="center"
+                            android:src="@drawable/ic_general_notes" />
 
                         <TextView
                             android:id="@+id/main_parent_ll_ll1_ll1_ll1_tv"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="1dp"
+                            android:layout_gravity="center"
+                            android:gravity="center"
                             android:text="@string/MAIN_GENERALNOTE"
-                            android:textColor="#FFF"
+                            android:textColor="@color/LemonChiffon"
                             android:textSize="18sp"
                             android:textStyle="bold|italic" />
 
@@ -126,7 +110,7 @@
                         android:layout_height="120dp"
                         android:layout_marginStart="10dp"
                         android:layout_marginEnd="10dp"
-                        android:background="@drawable/main_parent_bg_red"
+                        android:background="@drawable/special_note"
                         android:orientation="vertical"
                         android:paddingStart="10dp"
                         android:paddingEnd="10dp">
@@ -137,16 +121,19 @@
                             android:layout_height="wrap_content"
                             android:layout_marginStart="1dp"
                             android:layout_marginTop="12dp"
-                            android:layout_marginBottom="15dp"
-                            android:src="@drawable/checked" />
+                            android:layout_gravity="center"
+                            android:layout_marginBottom="10dp"
+                            android:src="@drawable/ic_private_notes" />
 
                         <TextView
                             android:id="@+id/main_parent_ll_ll1_ll2_ll2_tv2"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="1dp"
+                            android:layout_gravity="center"
+                            android:gravity="center"
                             android:text="@string/MAIN_SPECIALNOTE"
-                            android:textColor="#FFF"
+                            android:textColor="@color/LemonChiffon"
                             android:textSize="18sp"
                             android:textStyle="bold|italic" />
 
@@ -170,7 +157,7 @@
                         android:layout_height="120dp"
                         android:layout_marginStart="10dp"
                         android:layout_marginEnd="10dp"
-                        android:background="@drawable/main_parent_bg_green"
+                        android:background="@drawable/final_result_card"
                         android:orientation="vertical"
                         android:paddingStart="10dp"
                         android:paddingEnd="10dp">
@@ -179,10 +166,10 @@
                             android:id="@+id/main_parent_ll_ll1_ll3_ll3_iv3"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginStart="1dp"
+                            android:layout_gravity="center"
                             android:layout_marginTop="12dp"
-                            android:layout_marginBottom="15dp"
-                            android:src="@drawable/checked" />
+
+                            android:src="@drawable/ic_final_result" />
 
                         <TextView
                             android:id="@+id/main_parent_ll_ll1_ll3_ll3_tv3"
@@ -190,7 +177,9 @@
                             android:layout_height="wrap_content"
                             android:layout_marginStart="1dp"
                             android:text="@string/MAIN_FINAL_RESULT"
-                            android:textColor="#FFF"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:textColor="@color/LemonChiffon"
                             android:textSize="18sp"
                             android:textStyle="bold|italic" />
 
@@ -208,37 +197,39 @@
                 android:orientation="horizontal"
                 android:paddingTop="24dp"
                 android:paddingBottom="24dp"
-                android:layout_weight="3">
+                android:layout_weight="1">
 
                 <LinearLayout
                     android:id="@+id/main_parent_ll2_ll1_ll1"
-                    android:layout_width="0dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingEnd="4dp"
-                    android:paddingStart="4dp"
+                    android:paddingStart="47dp"
+                    android:layout_gravity="start"
                     android:orientation="vertical"
-                    android:layout_weight="1"
                     >
 
                     <LinearLayout
                         android:id="@+id/main_parent_ll2_ll1_ll1_ll1_calender"
-                        android:layout_width="match_parent"
-                        android:layout_height="120dp"
+                        android:layout_width="120dp"
+                        android:layout_height="116dp"
                         android:orientation="vertical"
                         android:layout_marginStart="10dp"
                         android:layout_marginEnd="10dp"
                         android:paddingStart="10dp"
                         android:paddingEnd="10dp"
-                        android:background="@drawable/main_parent_bg_green">
+                        android:layout_gravity="start"
+                        android:background="@drawable/special_note">
 
                         <ImageView
                             android:id="@+id/main_parent_ll2_ll1_ll1_ll1_iv1"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="1dp"
-                            android:layout_marginBottom="15dp"
+
                             android:layout_marginTop="12dp"
-                            android:src="@drawable/checked" />
+                            android:layout_gravity="center"
+                            android:src="@drawable/ic_calender" />
 
                         <TextView
                             android:id="@+id/main_parent_ll2_ll1_ll1_ll1_tv"
@@ -246,7 +237,9 @@
                             android:layout_height="wrap_content"
                             android:text="@string/MAIN_CALENDER"
                             android:layout_marginStart="1dp"
-                            android:textColor="#FFF"
+                            android:textColor="@color/LemonChiffon"
+                            android:layout_gravity="center"
+                            android:gravity="center"
                             android:textSize="18sp"
                             android:textStyle="bold|italic"
                             />
@@ -257,34 +250,34 @@
 
                 <LinearLayout
                     android:id="@+id/main_parent_ll2_ll1_ll2"
-                    android:layout_width="0dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingEnd="4dp"
-                    android:paddingStart="4dp"
+                    android:paddingStart="35dp"
                     android:orientation="vertical"
-                    android:layout_weight="1"
-                    android:layout_gravity="end"
+
+
+
                     >
 
                     <LinearLayout
                         android:id="@+id/main_parent_ll2_ll1_ll2_ll2_sends_message"
-                        android:layout_width="match_parent"
-                        android:layout_height="120dp"
+                        android:layout_width="120dp"
+                        android:layout_height="117dp"
                         android:orientation="vertical"
                         android:layout_marginStart="10dp"
                         android:layout_marginEnd="10dp"
                         android:paddingStart="10dp"
                         android:paddingEnd="10dp"
-                        android:background="@drawable/main_parent_bg_red">
+                        android:background="@drawable/special_note">
 
                         <ImageView
                             android:id="@+id/main_parent_ll2_ll1_ll2_ll2_iv2"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="1dp"
-                            android:layout_marginBottom="15dp"
-                            android:layout_marginTop="12dp"
-                            android:src="@drawable/checked"/>
+                            android:layout_gravity="center"
+                            android:src="@drawable/ic_send_message"/>
 
                         <TextView
                             android:id="@+id/main_parent_ll2_ll1_ll2_ll2_tv2"
@@ -292,26 +285,14 @@
                             android:layout_height="wrap_content"
                             android:text="@string/MAIN_SEND_NOTE_TO_THE_INSTRUCTOR"
                             android:layout_marginStart="1dp"
-                            android:textColor="#FFF"
+                            android:textColor="@color/LemonChiffon"
                             android:textSize="18sp"
+                            android:layout_gravity="center"
+                            android:gravity="center"
                             android:textStyle="bold|italic"
                             />
 
                     </LinearLayout>
-
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:id="@+id/main_parent_ll2_ll1_ll3"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:paddingEnd="4dp"
-                    android:paddingStart="4dp"
-                    android:orientation="vertical"
-                    android:layout_weight="1"
-                    >
-
 
 
                 </LinearLayout>

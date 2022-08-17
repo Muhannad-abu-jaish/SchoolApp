@@ -5,6 +5,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
+    android:background="@color/Lgary"
     android:id="@+id/main_nav_drawer">
 
 
@@ -14,7 +15,7 @@
         android:layout_height="120dp"
         android:layout_margin="16dp"
         android:onClick="ClickLogo"
-        android:src="@drawable/main_logo"
+        android:src="@drawable/logo_no_background"
         tools:ignore="UsingOnClickInXml" />
 
     <TextView
@@ -51,6 +52,9 @@
             android:layout_weight="1"
             android:text="@string/HOME_TEXT"
             android:padding="12dp"
+            android:textStyle="bold|italic"
+            android:textSize="23sp"
+            android:textColor="@color/DarkMagenta"
             android:layout_marginStart="16dp"/>
 
         <ImageView
@@ -58,7 +62,7 @@
             android:layout_width="32dp"
             android:layout_height="32dp"
             android:layout_marginEnd="48dp"
-            android:src="@drawable/homepage"/>
+            android:src="@drawable/ic_home"/>
 
         <!--  app:tint="@color/DarkMagenta"-->
 
@@ -83,6 +87,9 @@
             android:layout_weight="1"
             android:text="@string/PERSONAL_PROFILE"
             android:padding="12dp"
+            android:textStyle="bold|italic"
+            android:textSize="23sp"
+            android:textColor="@color/DarkMagenta"
             android:layout_marginStart="16dp"/>
 
         <ImageView
@@ -90,7 +97,7 @@
             android:layout_width="32dp"
             android:layout_height="32dp"
             android:layout_marginEnd="48dp"
-            android:src="@drawable/profile"/>
+            android:src="@drawable/ic_profile"/>
 
 
         <!--  app:tint="@color/DarkMagenta"-->
@@ -114,6 +121,9 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="@string/SETTINGS"
+            android:textStyle="bold|italic"
+            android:textSize="23sp"
+            android:textColor="@color/DarkMagenta"
             android:padding="12dp"
             android:layout_marginStart="16dp"/>
 
@@ -122,7 +132,7 @@
             android:layout_width="32dp"
             android:layout_height="32dp"
             android:layout_marginEnd="48dp"
-            android:src="@drawable/settings"/>
+            android:src="@drawable/ic_settings"/>
         <!--  app:tint="@color/DarkMagenta"-->
 
 
@@ -146,7 +156,10 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="Contact us"
+            android:textSize="23sp"
             android:padding="12dp"
+            android:textColor="@color/DarkMagenta"
+            android:textStyle="bold"
             android:layout_marginStart="16dp"/>
 
         <ImageView
@@ -154,11 +167,12 @@
             android:layout_width="32dp"
             android:layout_height="32dp"
             android:layout_marginEnd="48dp"
-            android:src="@drawable/contact_us"/>
+            android:src="@drawable/ic_phone_contuct"/>
 
         <!--  app:tint="@color/DarkMagenta"-->
 
     </LinearLayout>
+
 
 
     <LinearLayout
@@ -177,6 +191,9 @@
             android:layout_weight="1"
             android:text="@string/About_Us"
             android:padding="12dp"
+            android:textStyle="bold|italic"
+            android:textSize="23dp"
+            android:textColor="@color/DarkMagenta"
             android:layout_marginStart="16dp"/>
 
         <ImageView
@@ -184,7 +201,7 @@
             android:layout_width="32dp"
             android:layout_height="32dp"
             android:layout_marginEnd="48dp"
-            android:src="@drawable/about_us"/>
+            android:src="@drawable/ic_information_svgrepo_com"/>
 
 
         <!--  app:tint="@color/DarkMagenta"-->
@@ -206,7 +223,10 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="@string/gallery"
+            android:textSize="23sp"
             android:padding="12dp"
+            android:textColor="@color/DarkMagenta"
+            android:textStyle="bold"
             android:layout_marginStart="16dp"/>
 
         <ImageView
@@ -214,7 +234,7 @@
             android:layout_width="35dp"
             android:layout_height="35dp"
             android:layout_marginEnd="48dp"
-            android:src="@drawable/gallery"/>
+            android:src="@drawable/ic_gallery"/>
 
         <!--  app:tint="@color/DarkMagenta"-->
 
@@ -238,6 +258,9 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="@string/LOGOUT"
+            android:textStyle="bold|italic"
+            android:textSize="23dp"
+            android:textColor="@color/DarkMagenta"
             android:padding="12dp"
             android:layout_marginStart="16dp"/>
 
@@ -246,7 +269,7 @@
             android:layout_width="32dp"
             android:layout_height="32dp"
             android:layout_marginEnd="48dp"
-            android:src="@drawable/logout"/>
+            android:src="@drawable/ic_logout"/>
 
         <!--  app:tint="@color/DarkMagenta"-->
 

@@ -24,7 +24,7 @@ AdapterGalleryImage adapterGalleryImage;
 ArrayList<IMAGES>imagesArrayList;
     Drawable drawable;
     SharedPreferences sharedPreferences;
-    TextView num_notification;
+    TextView num_notification , name_tool_bar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,6 +56,8 @@ ArrayList<IMAGES>imagesArrayList;
         imagesArrayList.add(new IMAGES(drawable));
     }
     private void init(){
+        name_tool_bar = findViewById(R.id.main_toolbar_activity_name_tv) ;
+        name_tool_bar.setText(R.string.GALLERY_IMAGE);
         recyclerView = findViewById(R.id.recycler_gallery_image);
         adapterGalleryImage = new AdapterGalleryImage();
         imagesArrayList = new ArrayList<>();

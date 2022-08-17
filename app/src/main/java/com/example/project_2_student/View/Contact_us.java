@@ -19,6 +19,7 @@ public class Contact_us extends AppCompatActivity {
  LinearLayout facebook , twitter , website;
  TextView num_notification;
  SharedPreferences sharedPreferences;
+ TextView name_tool_bar;
  @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -62,6 +63,10 @@ public class Contact_us extends AppCompatActivity {
 
     private void init(){
         drawerLayout = findViewById(R.id.drawer_contact_us);
+
+        name_tool_bar = findViewById(R.id.main_toolbar_activity_name_tv) ;
+        name_tool_bar.setText(R.string.CONTUCT_US);
+
         facebook = findViewById(R.id.link_facebook);
         twitter = findViewById(R.id.link_twitter);
         website = findViewById(R.id.link_website);

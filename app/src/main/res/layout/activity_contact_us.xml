@@ -16,153 +16,165 @@
             android:id="@+id/include"
             layout="@layout/main_toolbar" />
 
-        <TextView
-            android:id="@+id/textView8"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:fontFamily="sans-serif-black"
-            android:gravity="center"
-            android:text="ContactUs"
-            android:textColor="@color/white"
-            android:textSize="45sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/include"
-            app:layout_constraintVertical_bias="0.0"
-            tools:layout_editor_absoluteX="0dp" />
         <com.google.android.material.card.MaterialCardView
-            android:layout_width="match_parent"
-            android:layout_height="450sp"
-            android:layout_marginTop="56dp"
-            app:cardBackgroundColor="@null"
+            android:layout_width="370dp"
+            android:layout_height="500dp"
+            android:backgroundTint="@color/Lgary"
+            app:cardCornerRadius="40sp"
+            app:circularflow_viewCenter="@color/Lgary"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView8"
-            app:layout_constraintVertical_bias="0.157"
-            tools:layout_editor_absoluteX="0dp">
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:strokeColor="@color/DarkMagenta"
+            app:strokeWidth="2dp">
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
+
                 <LinearLayout
+                    android:id="@+id/link_website"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/link_website"
-                    android:padding="10sp"
-                    android:orientation="horizontal">
+                    android:orientation="horizontal"
+                    android:padding="10sp">
+
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:padding="10sp"
-                        android:src="@drawable/website_saadeh"/>
+                        android:src="@drawable/website_saadeh" />
+
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@string/website"
                         android:layout_marginTop="20dp"
                         android:fontFamily="sans-serif-black"
-                        android:textSize="20sp"/>
+                        android:text="@string/website"
+                        android:textColor="@color/DarkMagenta"
+                        android:textSize="20sp" />
                 </LinearLayout>
+
                 <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
                     android:id="@+id/link_facebook"
-                    android:padding="10sp"
-                    android:orientation="horizontal">
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="10sp">
+
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:padding="10sp"
-                        android:src="@drawable/facebook_saadeh"/>
+                        android:src="@drawable/facebook_saadeh" />
+
                     <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/facebook"
-                    android:layout_marginTop="20dp"
-                    android:fontFamily="sans-serif-black"
-                    android:textSize="20sp"/>
-                </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="10sp"
-                android:id="@+id/link_twitter"
-                android:orientation="horizontal">
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:padding="10sp"
-                    android:src="@drawable/twitter_saadeh"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="sans-serif-black"
-                    android:layout_marginTop="15dp"
-                    android:text="@string/twitter"
-                    android:textSize="20sp"/>
-            </LinearLayout>
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:padding="10sp"
-                    android:orientation="horizontal">
-                    <ImageView
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:padding="10sp"
-                        android:src="@drawable/phone_saadeh"/>
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
                         android:fontFamily="sans-serif-black"
-                        android:layout_marginTop="15dp"
-                        android:text="+963 966 033 809"
-                        android:textSize="20sp"/>
+                        android:text="@string/facebook"
+                        android:textSize="20sp" />
                 </LinearLayout>
+
                 <LinearLayout
+                    android:id="@+id/link_twitter"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:padding="10sp"
-                    android:orientation="horizontal">
+                    android:orientation="horizontal"
+                    android:padding="10sp">
+
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:padding="10sp"
-                        android:src="@drawable/fax_saadeh"/>
+                        android:src="@drawable/twitter_saadeh" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:fontFamily="sans-serif-black"
+                        android:text="@string/twitter"
+                        android:textSize="20sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="10sp">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="10sp"
+                        android:src="@drawable/phone_saadeh" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:fontFamily="sans-serif-black"
+                        android:text="+963 966 033 809"
+                        android:textSize="20sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="10sp">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="10sp"
+                        android:src="@drawable/fax_saadeh" />
+
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:orientation="vertical">
+
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:fontFamily="sans-serif-black"
                             android:text="011 2219877"
-                            android:textSize="20sp"/>
+                            android:textSize="20sp" />
+
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:fontFamily="sans-serif-black"
                             android:text="011 22966696"
-                            android:textSize="20sp"/>
+                            android:textSize="20sp" />
                     </LinearLayout>
 
                 </LinearLayout>
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:padding="10sp"
-                    android:orientation="horizontal">
+                    android:orientation="horizontal"
+                    android:padding="10sp">
+
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:padding="10sp"
-                        android:src="@drawable/location_saadeh"/>
+                        android:src="@drawable/location_saadeh" />
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:fontFamily="sans-serif-black"
                         android:layout_marginTop="15dp"
+                        android:fontFamily="sans-serif-black"
                         android:text="Damascus - Kanawat"
-                        android:textSize="20sp"/>
+                        android:textSize="20sp" />
                 </LinearLayout>
 
 

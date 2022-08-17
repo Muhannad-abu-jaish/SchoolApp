@@ -33,7 +33,7 @@ public class SendMessage extends AppCompatActivity {
     MaterialButton materialButton_send ;
     DrawerLayout drawerLayout ;
     SharedPreferences sharedPreferences ;
-    TextView num_notification;
+    TextView num_notification , name_tool_bar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,6 +45,9 @@ public class SendMessage extends AppCompatActivity {
 
     public void initialize()
     {
+        name_tool_bar = findViewById(R.id.main_toolbar_activity_name_tv) ;
+        name_tool_bar.setText(R.string.MAIN_SEND_NOTE_TO_THE_INSTRUCTOR);
+
         textInputEditText_content = findViewById(R.id.send_message_content_text_input_et) ;
         materialButton_send = findViewById(R.id.send_message_send_btn) ;
         drawerLayout = findViewById(R.id.send_message_drawer_layout) ;

@@ -22,9 +22,9 @@ public class PersonalProfile extends AppCompatActivity {
     SharedPreferences sharedPreferences ;
     SharedPreferences.Editor editor;
 
-    ImageView personal_profile_move_back_iv , personal_profile_student_photo_iv;
+    ImageView  personal_profile_student_photo_iv;
     TextView personal_profile_student_name_tv , personal_profile_grade_number_tv , personal_profile_division_number_tv;
-    TextView personal_profile_phone_number_tv , personal_profile_username_tv , personal_profile_password_tv , personal_profile_birth_date_tv ;
+    TextView personal_profile_tool_bar_text , personal_profile_username_tv , personal_profile_password_tv , personal_profile_birth_date_tv ;
     TextView personal_profile_address_tv , personal_profile_admission_date_tv , personal_profile_age_tv;
     TextView personal_profile_evaluate_student;
     @Override
@@ -46,11 +46,15 @@ public class PersonalProfile extends AppCompatActivity {
 
         sharedPreferences = getSharedPreferences(LoginActivity.STUDENT_DATA_DB,MODE_PRIVATE);
         editor = sharedPreferences.edit();
-        personal_profile_move_back_iv =(ImageView) findViewById(R.id.personal_profile_ll_move_back);
-        clickToBack();
+
+        //clickToBack();
 
         personal_profile_student_photo_iv=findViewById(R.id.personal_profile_ll2_student_photo_iv);
         personal_profile_student_name_tv=findViewById(R.id.personal_profile_ll2_student_name_tv);
+
+        personal_profile_tool_bar_text = findViewById(R.id.main_toolbar_activity_name_tv);
+        personal_profile_tool_bar_text.setText(R.string.PERSONAL_PROFILE);
+
         personal_profile_grade_number_tv=findViewById(R.id.personal_profile_ll2_cv_ll_ll_grade_number_tv);
         personal_profile_division_number_tv=findViewById(R.id.personal_profile_ll2_cv_ll2_division_number_tv);
         personal_profile_username_tv=findViewById(R.id.personal_profile_rl_cv_ll2_username_tv);
@@ -109,7 +113,7 @@ public class PersonalProfile extends AppCompatActivity {
 
     }
 
-    public void clickToBack()
+   /* public void clickToBack()
     {
         personal_profile_move_back_iv.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -118,7 +122,7 @@ public class PersonalProfile extends AppCompatActivity {
                 //كود العودة للواجهة السابقة للبروفايل
             }
         });
-    }
+    }*/
 
     public void ClickMenu(View view)
     {

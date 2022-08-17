@@ -11,7 +11,7 @@ import java.util.ArrayList;
 
 public class PrivateNotesDB extends SQLiteOpenHelper {
 
-    private static final int DATABASE_VERSION = 2;
+    private static final int DATABASE_VERSION = 3;
     private static final String DATABASE_NAME = "private_notes";
     private static final String DATABASE_TABLE  ="notestable";
 

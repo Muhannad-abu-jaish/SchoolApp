@@ -39,7 +39,8 @@ public class PrivateNote extends AppCompatActivity {
     DrawerLayout drawerLayout;
     String myToken;
     SharedPreferences sharedPreferences;
-    TextView num_notification;
+    TextView num_notification , name_tool_bar;
+
     Button Retry;
     View noConnection;
 
@@ -103,6 +104,11 @@ public class PrivateNote extends AppCompatActivity {
         });
     }
     public void init(){
+
+        name_tool_bar = findViewById(R.id.main_toolbar_activity_name_tv) ;
+        name_tool_bar.setText(R.string.MAIN_SPECIALNOTE);
+
+         privateNotesDB = new PrivateNotesDB(this);
         Retry = findViewById(R.id.retry_connection);
         noConnection = findViewById(R.id.view_NoConnection);
         privateNotesDB = new PrivateNotesDB(this);

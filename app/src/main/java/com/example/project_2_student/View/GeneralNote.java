@@ -35,7 +35,9 @@ public class GeneralNote extends AppCompatActivity  {
     DrawerLayout drawerLayout;
     String myToken;
     SharedPreferences sharedPreferences;
-    TextView num_notification;
+    TextView num_notification , name_tool_bar;
+
+
     Button Retry;
     View noConnection;
 
@@ -99,6 +101,10 @@ public class GeneralNote extends AppCompatActivity  {
     public void init(){
         Retry = findViewById(R.id.retry_connection);
         noConnection = findViewById(R.id.view_NoConnection);
+
+        name_tool_bar = findViewById(R.id.main_toolbar_activity_name_tv) ;
+        name_tool_bar.setText(R.string.MAIN_GENERALNOTE);
+
         recyclerView = findViewById(R.id.recycler_adverts);
         drawerLayout = findViewById(R.id.general_notes_drawer_layout);
         generalNotesDB = new GeneralNotesDB(this) ;

@@ -86,7 +86,6 @@ public class LoginActivity extends AppCompatActivity {
         login_btn=findViewById(R.id.Login_btn);
         email_et=findViewById(R.id.login_ll_1_et_email);
         password_et=findViewById(R.id.login_ll_1_et_2_password);
-        forgotPassword_tv=findViewById(R.id.login_ll_1_tv_forgot_password);
         sharedPreferences = getSharedPreferences(LoginActivity.STUDENT_DATA_DB,MODE_PRIVATE);
         if(sharedPreferences.getString(NUM_NOTIFICATION,"").isEmpty()){
             SharedPreferences.Editor editor = sharedPreferences.edit();

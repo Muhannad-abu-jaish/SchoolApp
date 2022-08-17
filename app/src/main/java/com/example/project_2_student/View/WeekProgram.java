@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.project_2_student.Constant.CONSTANT;
@@ -29,6 +30,7 @@ public class WeekProgram extends AppCompatActivity {
     Button thursday_1 , thursday_2,thursday_3,thursday_4,thursday_5,thursday_6,thursday_7;
     int sectionId;
     SharedPreferences sharedPreferences;
+    TextView name_tool_bar ;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -110,6 +112,8 @@ public class WeekProgram extends AppCompatActivity {
     }
 
     private void init(){
+       /* name_tool_bar = findViewById(R.id.main_toolbar_activity_name_tv) ;
+        name_tool_bar.setText(" "+R.string.WEEK_PROGRAM);*/
         sharedPreferences = getSharedPreferences(LoginActivity.STUDENT_DATA_DB,MODE_PRIVATE);
         sectionId = sharedPreferences.getInt(LoginActivity.SECTIONID,-1);
         sunday_1 = findViewById(R.id.sunday_1);

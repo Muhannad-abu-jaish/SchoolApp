@@ -42,4 +42,19 @@
 <string name="WRITE_THE_MESSAGE">من فضلك اكتب\ي الرسالة هنا</string>
     <string name="WELCOM_TEXT">تستطيع من خلال هذه الواجهة إرسال رسالة للمدرسة وسيتم استقبالها من قبل الموجه…
     وتستطسع كتابة أي شيئ تريده، شكوي أو نصيحة للمدرسة أو للتطبيق وبعد الانتهاء قم بإرسالها وسيتم قراءة الرسالة بأسرع وقت ممكن وبكل رحابة صدر</string>
+
+
+
+    <string name="absence_warning">تحذير غياب</string>
+
+    <string name="facebook"><u><a href="https://www.facebook.com/Alsaade.private.School">  الفيسبوك الخاص بنا </a></u></string>
+    <string name="twitter"><u><a href="https://twitter.com/saadeschool"> التويتر الخاص بنا </a></u></string>
+    <string name="website"><u><a href="https://www.saadeschool.com/ar/index.php"> الذهاب للموقع </a></u></string>
+
+    <string name="ABSENCE_WARNING">تحذير غياب</string>
+    <string name="CONTUCT_US">تواصل معنا</string>
+    <string name="GALLERY_IMAGE">معرض الصور</string>
+    <string name="aboutus">عن المدرسة<i></i></string>
+    <string name="WEEK_PROGRAM">برنامج الأسبوع</string>
+    <string name="gallery">معرض الصور</string>
 </resources>

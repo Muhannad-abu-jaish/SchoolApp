@@ -6,7 +6,6 @@
 
     //Login Activity
     <string name="LOGIN">LOGIN</string>
-    <string name="SignIn">SIGN UP</string>
     <string name="USERNAME">UserName</string>
     <string name="PASSWORD">Password</string>
     <string name="FORGOT_PASSWORD">Forgot Password</string>
@@ -39,6 +38,7 @@
     <string name="RECEIVE_DATE">Receive Date :</string>
 
 
+
     //Send Message
     <string name="WRITE_THE_MESSAGE">Write the message pleas </string>
     <string name="WELCOM_TEXT">You can in this activity write anything you want the instructor to read it
@@ -46,6 +46,10 @@
     <string name="absence_warning">Absence warning</string>
     //contact us
 
+    <string name="ABSENCE_WARNING">Absence Warning</string>
+    <string name="CONTUCT_US">Contact US</string>
+    <string name="GALLERY_IMAGE">Gallery Image</string>
+    <string name="WEEK_PROGRAM">Week Program</string>
     <string name="facebook"><u><a href="https://www.facebook.com/Alsaade.private.School">  our facebook site </a></u></string>
     <string name="twitter"><u><a href="https://twitter.com/saadeschool"> our twitter site </a></u></string>
     <string name="website"><u><a href="https://www.saadeschool.com/ar/index.php"> go to website </a></u></string>

@@ -11,7 +11,7 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class CONSTANT {
-    public static String URL = "http://192.168.1.107:3000/";
+    public static String URL = "http://192.168.113.12:3000/";
     public static String URL_EMULATOR = "http://10.0.2.2:3000/";
     public static API CREATING_CALL(){
         Gson gson = new GsonBuilder().setLenient().create();

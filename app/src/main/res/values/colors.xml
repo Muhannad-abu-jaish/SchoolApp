@@ -7,13 +7,16 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="Lgary">#e4e4e4</color>
 
     //Private colors
+
 
     <color name="Pink">#cf4bf8</color>
     <color name="Violet">#8813e4</color>
     <color name="PrimaryBlue">#3d93d9</color>
     <color name="GreenLight">#5ff0f7</color>
+
 
 
     <color name="BluGreen">#03634c</color>
@@ -100,6 +103,7 @@
     <color name="DarkGray">#A9A9A9</color>
     <color name="Brown">#A52A2A</color>
     <color name="Sienna">#A0522D</color>
+    <color name="YellowLight">#f9f18c</color>
     <color name="YellowGreen">#9ACD32</color>
     <color name="DarkOrchid">#9932CC</color>
     <color name="PaleGreen">#98FB98</color>
@@ -159,6 +163,27 @@
     <color name="MediumBlue">#0000CD</color>
     <color name="DarkBlue">#00008B</color>
     <color name="Navy">#000080</color>
+
+
+    <color name="maroon">#800000</color>
+    <color name="Dark_Red">#8B0000</color>
+    <color name="brown">#A52A2A</color>
+    <color name="firebrick">#B22222</color>
+    <color name="crimson">#DC143C</color>
+    <color name="tomato">#FF6347</color>
+    <color name="DarkGoldenRod">#B8860B</color>
+    <color name="GoldenRoad">#DAA520</color>
+    <color name="PaleGoldenRod">#EEE8AA</color>
+    <color name="MediumAquaMarine">#66CDAA</color>
+    <color name="AquaMarin">#7FFFD4</color>
+    <color name="PowerBlue">#B0E0E6</color>
+    <color name="CornFlowerBlue">#6495ED</color>
+    <color name="CornSilk">#FFF8DC</color>
+    <color name="LightGoldenRodYellow">#FAFAD2</color>
+    <color name="LavenderBLush">#FFF0F5</color>
+    <color name="SeaShell">#FFF5EE</color>
+    <color name="LightSleetBlue">#B0C4DE</color>
+    <color name="LightGray">#D3D3D3</color>
 
 
 </resources>

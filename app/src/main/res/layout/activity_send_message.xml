@@ -34,9 +34,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
-            app:cardCornerRadius="10dp"
+            app:cardCornerRadius="40dp"
             android:layout_gravity="center_horizontal"
             app:cardElevation="8dp"
+            android:backgroundTint="@color/Lgary"
             android:outlineSpotShadowColor="@color/Violet"
             android:outlineAmbientShadowColor="@color/Violet"
             app:cardMaxElevation="8dp"
@@ -48,27 +49,14 @@
                 android:layout_height="match_parent"
                 android:orientation="vertical"
                 android:padding="10dp"
-
-                android:weightSum="1">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="@drawable/advrts_sides"
-                    android:gravity="center"
-                    android:orientation="horizontal">
-
+                >
                     <ImageView
                         android:layout_width="111dp"
                         android:layout_height="111dp"
-                        android:background="@drawable/advrts_sides"
+                        android:src="@drawable/logo_no_background"
+                        android:layout_gravity="center"
                         android:padding="6dp"
-                        android:src="@drawable/main_logo"/>
-
-
-                </LinearLayout>
-
-
+                       />
 
                         <com.google.android.material.textfield.TextInputLayout
 
@@ -76,12 +64,14 @@
                             android:layout_height="wrap_content"
                             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
                             app:boxStrokeColor="@color/DarkMagenta"
+                            android:textColorHint="@color/MediumVioletRed"
                             app:startIconTint="@color/DarkMagenta"
                             >
                             <com.google.android.material.textfield.TextInputEditText
                                 android:id="@+id/send_message_content_text_input_et"
                                 android:hint="@string/WRITE_THE_MESSAGE"
                                 android:layout_width="match_parent"
+                                android:textColor="@color/MediumVioletRed"
                                 android:layout_height="wrap_content"
                                 />
 
@@ -93,8 +83,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Send"
+                    android:textColor="@color/white"
                     android:layout_gravity="center"
-                    app:strokeColor="@color/FireBrick"
+                    android:backgroundTint="@color/MediumVioletRed"
                     style="@style/Widget.MaterialComponents.Button.OutlinedButton"
                     app:cornerRadius="12dp"
 

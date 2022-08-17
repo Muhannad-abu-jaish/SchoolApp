@@ -5,23 +5,22 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/login_bg"
-    android:layout_gravity="center"
     tools:context=".View.LoginActivity">
 
 
     <RelativeLayout
         android:id="@+id/login_rl_logo"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/_150sdp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintStart_toStartOf="parent"
+        >
 
         <ImageView
             android:id="@+id/login_rl_logo_iv"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:padding="@dimen/_10sdp"
-            android:src="@drawable/mainlogo" />
+            android:layout_width="match_parent"
+            android:layout_height="199dp"
+            android:src="@drawable/ic_logosvg" />
     </RelativeLayout>
 
 
@@ -29,6 +28,8 @@
         android:id="@+id/login_rl_2_left_bg"
         android:layout_width="220dp"
         android:layout_height="480dp"
+        android:gravity="center_vertical"
+        android:layout_marginTop="-40dp"
         app:layout_constraintTop_toBottomOf="@+id/login_rl_logo"
         app:layout_constraintLeft_toLeftOf="parent"
         android:background="@drawable/login_left_side" />
@@ -36,16 +37,17 @@
     <LinearLayout
         android:id="@+id/login_panel_ll_1"
         android:layout_width="match_parent"
-        android:layout_height="320dp"
+        android:layout_height="280dp"
         android:layout_marginTop="60dp"
+        android:layout_marginLeft="7dp"
+        android:layout_marginRight="7dp"
         android:background="@drawable/login_shape_panel"
         android:orientation="vertical"
         android:paddingLeft="50dp"
         android:paddingTop="70dp"
         android:paddingRight="50dp"
         app:layout_constraintTop_toBottomOf="@+id/login_rl_logo"
-        tools:layout_editor_absoluteX="30dp">
-
+       >
 
         <com.google.android.material.textfield.TextInputLayout
 
@@ -55,11 +57,14 @@
             app:boxStrokeColor="@color/DarkMagenta"
             app:startIconDrawable="@android:drawable/sym_action_email"
             app:startIconTint="@color/DarkMagenta"
+            android:hint="@string/USERNAME"
+            app:hintTextColor="@color/DarkMagenta"
             >
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/login_ll_1_et_email"
-                android:hint="@string/USERNAME"
                 android:layout_width="match_parent"
+                android:textColor="@color/DarkMagenta"
+                android:textColorHint="@color/DarkMagenta"
                 android:layout_height="wrap_content"
                 />
 
@@ -74,15 +79,18 @@
             app:boxStrokeColor="@color/DarkMagenta"
             app:startIconDrawable="@android:drawable/ic_lock_idle_lock"
             app:startIconTint="@color/DarkMagenta"
-            app:passwordToggleEnabled="false"
+            app:passwordToggleEnabled="true"
+            android:textColorHint="@color/DarkMagenta"
+            android:hint="@string/PASSWORD"
             app:passwordToggleTint="@color/DarkMagenta"
 
             >
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/login_ll_1_et_2_password"
-                android:hint="@string/PASSWORD"
                 android:layout_width="match_parent"
+                android:textColor="@color/DarkMagenta"
+                android:textColorHint="@color/DarkMagenta"
                 android:layout_height="wrap_content"
                 />
 
@@ -118,24 +126,17 @@
             android:paddingBottom="10dp"
             />    -->
 
-        <TextView
-            android:id="@+id/login_ll_1_tv_forgot_password"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
-            android:gravity="right"
-            android:textColor="@color/black"
-            android:text="@string/FORGOT_PASSWORD" />
+
     </LinearLayout>
 
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/Login_btn"
         android:layout_width="150dp"
         android:layout_height="50dp"
-        android:layout_marginBottom="5dp"
-        android:textColor="@color/white"
-        android:background="@drawable/login_button_bg"
+        android:layout_marginBottom="35dp"
+        android:textColor="@color/LemonChiffon"
+        android:backgroundTint="@color/MediumVioletRed"
         android:text="@string/LOGIN"
         app:layout_constraintBottom_toBottomOf="@+id/login_panel_ll_1"
         app:layout_constraintEnd_toEndOf="parent"
@@ -151,6 +152,6 @@
         app:layout_constraintTop_toTopOf="@+id/login_panel_ll_1"
         android:gravity="start"
         android:text="@string/LOGIN"
-        android:textColor="@color/SlateGray"/>
+        android:textColor="@color/LemonChiffon"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

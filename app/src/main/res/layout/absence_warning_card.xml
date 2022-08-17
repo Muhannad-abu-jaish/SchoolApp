@@ -34,7 +34,7 @@
                     android:layout_height="111dp"
                     android:background="@drawable/advrts_sides"
                     android:padding="6dp"
-                    android:src="@drawable/main_logo"/>
+                    android:src="@drawable/logo_no_background"/>
 
                 <LinearLayout
                     android:layout_width="0dp"
