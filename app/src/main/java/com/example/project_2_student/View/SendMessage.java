@@ -7,6 +7,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.provider.ContactsContract;
 import android.view.View;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -34,6 +35,7 @@ public class SendMessage extends AppCompatActivity {
     DrawerLayout drawerLayout ;
     SharedPreferences sharedPreferences ;
     TextView num_notification , name_tool_bar;
+    ProgressBar progressBar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,7 +49,7 @@ public class SendMessage extends AppCompatActivity {
     {
         name_tool_bar = findViewById(R.id.main_toolbar_activity_name_tv) ;
         name_tool_bar.setText(R.string.MAIN_SEND_NOTE_TO_THE_INSTRUCTOR);
-
+        progressBar = findViewById(R.id.progress_send_message);
         textInputEditText_content = findViewById(R.id.send_message_content_text_input_et) ;
         materialButton_send = findViewById(R.id.send_message_send_btn) ;
         drawerLayout = findViewById(R.id.send_message_drawer_layout) ;
@@ -65,9 +67,10 @@ public class SendMessage extends AppCompatActivity {
         materialButton_send.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                progressBar.setVisibility(View.VISIBLE);
                 if(textInputEditText_content.getText().toString().isEmpty()){
                     Toast toast = Toast.makeText(SendMessage.this,"The Field is Empty!!",Toast.LENGTH_LONG);
+                    progressBar.setVisibility(View.GONE);
                     toast.getView().setBackground(getResources().getDrawable(R.color.Pink));
                     toast.show();
                 }
@@ -80,14 +83,15 @@ public class SendMessage extends AppCompatActivity {
                     responseBodyCall.enqueue(new Callback<ResponseBody>() {
                         @Override
                         public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
-
                             if(response.isSuccessful()){
+                                progressBar.setVisibility(View.GONE);
                                 Toast toast = Toast.makeText(SendMessage.this,"The Message is sent !!",Toast.LENGTH_LONG);
                                 toast.getView().setBackground(getResources().getDrawable(R.color.Pink));
                                 toast.show();
                                 textInputEditText_content.getText().clear();
                             }else{
                                 try {
+                                    progressBar.setVisibility(View.GONE);
                                     Toast.makeText(getApplicationContext(),response.errorBody().string(),Toast.LENGTH_LONG).show();
                                     System.out.println("Error successfully : " + response.errorBody().string());
                                 } catch (IOException e) {
@@ -97,6 +101,7 @@ public class SendMessage extends AppCompatActivity {
                         }
                         @Override
                         public void onFailure(Call<ResponseBody> call, Throwable t) {
+                            progressBar.setVisibility(View.GONE);
                             System.out.println("error is" + t.getMessage());
                             Toast.makeText(getApplicationContext()," No connection ",Toast.LENGTH_LONG).show();
 

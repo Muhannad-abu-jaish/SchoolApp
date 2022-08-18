@@ -1,5 +1,6 @@
 package com.example.project_2_student.Controller;
 
+import android.text.method.ScrollingMovementMethod;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -31,6 +32,7 @@ public class AdapterGeneralNotes extends RecyclerView.Adapter<AdapterGeneralNote
         holder.title.setText(""+generalNotes.get(position).getTitle());
         holder.exp_date.setText(""+generalNotes.get(position).getExp_date());
         holder.adverts_text.setText(""+generalNotes.get(position).getMessage());
+        holder.adverts_text.setMovementMethod(new ScrollingMovementMethod());
     }
 
     @Override

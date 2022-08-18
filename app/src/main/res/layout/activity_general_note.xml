@@ -6,11 +6,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".View.GeneralNote">
-
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@drawable/main_parent_bg"
         android:orientation="vertical">
         <include layout="@layout/main_toolbar"/>
         <TextView
@@ -18,15 +17,22 @@
             android:layout_height="wrap_content"
             android:text="@string/MAIN_GENERALNOTE"
             android:gravity="center"
+            android:background="@color/Lgary"
             android:textSize="40sp" />
         <include layout="@layout/view_no_connection"
             android:id="@+id/view_NoConnection"
             android:visibility="gone"/>
+        <ProgressBar
+            android:id="@+id/progress_general_notes"
+            android:layout_width="@dimen/_100sdp"
+            android:layout_height="@dimen/_100sdp"
+            android:layout_gravity="center"
+            android:progress="10"
+            />
         <androidx.recyclerview.widget.RecyclerView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@drawable/main_parent_bg"
-            android:id="@+id/recycler_adverts" />
+            android:id="@+id/recycler_adverts"/>
     </LinearLayout>
     <RelativeLayout
         android:id="@+id/main_parent_drawer_layout_rl"

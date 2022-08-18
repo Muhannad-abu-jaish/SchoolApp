@@ -19,6 +19,13 @@
         <include layout="@layout/view_no_connection"
             android:id="@+id/view_NoConnection"
             android:visibility="gone"/>
+        <ProgressBar
+            android:id="@+id/progress_private_notes"
+            android:layout_width="@dimen/_100sdp"
+            android:layout_height="@dimen/_100sdp"
+            android:layout_gravity="center"
+            android:progress="10"
+            />
         <androidx.recyclerview.widget.RecyclerView
             android:layout_width="match_parent"
             android:layout_height="match_parent"

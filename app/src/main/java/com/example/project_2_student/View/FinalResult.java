@@ -7,6 +7,7 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 import android.widget.TextView;
 
@@ -35,7 +36,7 @@ public class FinalResult extends AppCompatActivity {
   TextView name_tool_bar ;
     String pdfurl = "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf";
 
-
+  ProgressBar progressBar;
   Button Retry;
   View noConnection;
   @Override
@@ -51,6 +52,7 @@ public class FinalResult extends AppCompatActivity {
         Retry.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                progressBar.setVisibility(View.VISIBLE);
                 noConnection.setVisibility(View.GONE);
                 getData();
             }
@@ -63,6 +65,7 @@ public class FinalResult extends AppCompatActivity {
             @Override
             public void onResponse(Call<Limpidityie> call, Response<Limpidityie> response) {
                 if(response.isSuccessful()){
+                    progressBar.setVisibility(View.GONE);
                     if(response.body()!=null){
                         noConnection.setVisibility(View.VISIBLE);
                     }
@@ -73,6 +76,7 @@ public class FinalResult extends AppCompatActivity {
                     }
                 }
                 else{
+                    progressBar.setVisibility(View.GONE);
                     try {
                         Toast.makeText(getApplicationContext(),response.errorBody().string(),Toast.LENGTH_LONG).show();
                         System.out.println("Error Successfully : " + response.errorBody().string());
@@ -84,6 +88,7 @@ public class FinalResult extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<Limpidityie> call, Throwable t) {
+                progressBar.setVisibility(View.GONE);
                 System.out.println("Error : " +  t.getMessage());
                 pdfView.setVisibility(View.GONE);
                 noConnection.setVisibility(View.VISIBLE);
@@ -96,7 +101,7 @@ public class FinalResult extends AppCompatActivity {
        // pdfView = findViewById(R.id.idPDFView);
         name_tool_bar = findViewById(R.id.main_toolbar_activity_name_tv) ;
         name_tool_bar.setText(R.string.MAIN_FINAL_RESULT);
-
+        progressBar = findViewById(R.id.progress_final_result);
         Retry = findViewById(R.id.retry_connection);
         noConnection = findViewById(R.id.view_NoConnection);
         pdfView = findViewById(R.id.idPDFView);

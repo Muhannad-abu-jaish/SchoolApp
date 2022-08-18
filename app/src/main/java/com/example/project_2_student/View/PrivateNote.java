@@ -10,6 +10,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -40,7 +41,7 @@ public class PrivateNote extends AppCompatActivity {
     String myToken;
     SharedPreferences sharedPreferences;
     TextView num_notification , name_tool_bar;
-
+    ProgressBar progressBar;
     Button Retry;
     View noConnection;
 
@@ -61,6 +62,7 @@ public class PrivateNote extends AppCompatActivity {
         Retry.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                progressBar.setVisibility(View.VISIBLE);
                 noConnection.setVisibility(View.GONE);
                 try {
                     GET_ANNOUNCEMENT();
@@ -78,10 +80,12 @@ public class PrivateNote extends AppCompatActivity {
             @Override
             public void onResponse(Call<ArrayList<PrivateNotes>> call, Response<ArrayList<PrivateNotes>> response) {
                 if(response.isSuccessful()){
+                    progressBar.setVisibility(View.GONE);
                     if(response.body().size()==0){
                         noConnection.setVisibility(View.VISIBLE);
                     }
                     else{
+                        progressBar.setVisibility(View.GONE);
                         adapterPrivateNotes.setPrivateNotes(response.body());
                         setAdapterPrivateNotes(adapterPrivateNotes);
                         addPrivateNoteToDataBase(response);
@@ -98,6 +102,7 @@ public class PrivateNote extends AppCompatActivity {
             }
             @Override
             public void onFailure(Call<ArrayList<PrivateNotes>> call, Throwable t) {
+                progressBar.setVisibility(View.GONE);
                 System.out.println("Error : " + t.getMessage());
                 noConnection.setVisibility(View.VISIBLE);
             }
@@ -107,7 +112,7 @@ public class PrivateNote extends AppCompatActivity {
 
         name_tool_bar = findViewById(R.id.main_toolbar_activity_name_tv) ;
         name_tool_bar.setText(R.string.MAIN_SPECIALNOTE);
-
+        progressBar = findViewById(R.id.progress_private_notes);
          privateNotesDB = new PrivateNotesDB(this);
         Retry = findViewById(R.id.retry_connection);
         noConnection = findViewById(R.id.view_NoConnection);

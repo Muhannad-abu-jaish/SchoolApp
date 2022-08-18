@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.text.Layout;
 import android.view.View;
@@ -34,6 +35,7 @@ public class Absence_Warning extends AppCompatActivity {
     View noConnection;
     Button Retry;
    TextView name_tool_bar ;
+   ProgressBar progressBar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,6 +48,7 @@ public class Absence_Warning extends AppCompatActivity {
         Retry.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                progressBar.setVisibility(View.VISIBLE);
                 noConnection.setVisibility(View.GONE);
                 getData();
             }
@@ -58,6 +61,7 @@ public class Absence_Warning extends AppCompatActivity {
             @Override
             public void onResponse(Call<ArrayList<Absence>> call, Response<ArrayList<Absence>> response) {
                 if(response.isSuccessful()){
+                    progressBar.setVisibility(View.GONE);
                     if(response.body().size()==0){
                         noConnection.setVisibility(View.VISIBLE);
                     }
@@ -67,6 +71,7 @@ public class Absence_Warning extends AppCompatActivity {
                     }
                 }
                 else{
+                    progressBar.setVisibility(View.GONE);
                     try {
                         Toast.makeText(getApplicationContext(),response.errorBody().string(),Toast.LENGTH_LONG).show();
                         System.out.println("Error successfully : " + response.errorBody().string());
@@ -78,6 +83,7 @@ public class Absence_Warning extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<ArrayList<Absence>> call, Throwable t) {
+                progressBar.setVisibility(View.GONE);
                 System.out.println("Error : " + t.getMessage());
                 noConnection.setVisibility(View.VISIBLE);
             }
@@ -92,6 +98,7 @@ public class Absence_Warning extends AppCompatActivity {
 
     private  void init(){
         Retry = findViewById(R.id.retry_connection);
+        progressBar = findViewById(R.id.progress_absence_warning);
         noConnection = findViewById(R.id.view_NoConnection);
         name_tool_bar = findViewById(R.id.main_toolbar_activity_name_tv) ;
         name_tool_bar.setText(R.string.ABSENCE_WARNING);

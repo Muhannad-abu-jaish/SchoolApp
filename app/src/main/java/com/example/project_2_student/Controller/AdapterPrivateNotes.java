@@ -1,6 +1,7 @@
 package com.example.project_2_student.Controller;
 
 import android.content.Context;
+import android.text.method.ScrollingMovementMethod;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -55,6 +56,7 @@ public class AdapterPrivateNotes extends  RecyclerView.Adapter<AdapterPrivateNot
 
         holder.privateNoteMessage.setText(message);
         holder.privateNoteStartDate.setText(start_date);
+        holder.privateNoteMessage.setMovementMethod(new ScrollingMovementMethod());
 
     }
 

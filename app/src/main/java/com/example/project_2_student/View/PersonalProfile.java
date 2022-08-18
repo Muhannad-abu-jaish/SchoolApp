@@ -85,13 +85,13 @@ public class PersonalProfile extends AppCompatActivity {
         String birth_date = sharedPreferences.getString(LoginActivity.BIRTH_DATE,"No Birth Date");
         int class_number = sharedPreferences.getInt(LoginActivity.NAME_CLASS,0);
         int section_number = sharedPreferences.getInt(LoginActivity.NAME_SEC,0);
-        int evaluate = sharedPreferences.getInt(LoginActivity.EVALUATE,0);
-        setOnProfile(first_name,father_name,last_name,age,user_name,password,signin_date,birth_date,class_number,section_number);
+        int rank = sharedPreferences.getInt(LoginActivity.EVALUATE,0);
+        setOnProfile(first_name,father_name,last_name,age,user_name,password,signin_date,birth_date,class_number,section_number,rank);
 
     }//End of getProfileInformation
 
 
-    public void setOnProfile(String first_name ,String father_name,String last_name,int age,String user_name,String password,String signin_date,String birth_date,int class_number,int section_number )
+    public void setOnProfile(String first_name ,String father_name,String last_name,int age,String user_name,String password,String signin_date,String birth_date,int class_number,int section_number,int rank)
     {
 
         String student_name = first_name + " " + father_name + " " + last_name;
@@ -109,7 +109,8 @@ public class PersonalProfile extends AppCompatActivity {
         personal_profile_birth_date_tv.setText(birth_date);
         personal_profile_admission_date_tv.setText(signin_date);
         personal_profile_age_tv.setText(ageString);
-
+        personal_profile_evaluate_student.setText("Rank : "+rank);
+ //ERORRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR
 
     }
 

@@ -22,8 +22,8 @@ public interface API {
     public Call<ResponseBody> SEND_MESSAGE_TO_INSTRUCTOR(@Header("Authorization") String token , @Body NoteTo noteToInstructor);
     @GET("/show-public-note")
     public Call<ArrayList<GeneralNotes>> GENERAL_NOTES_CALL(@Header("Authorization") String token);
-    @GET("/show_week_program/{section}")
-    public Call<ArrayList<Program>> show_week_program(@Path("section")int sectionId ) ;
+    @GET("/show_week_program/{sectionID}")
+    public Call<ArrayList<Program>> show_week_program(@Path("sectionID")int sectionId ) ;
     @GET("/show-private-note")
     public Call<ArrayList<PrivateNotes>> PRIVATE_NOTES_CALL(@Header("Authorization") String token) ;
     @GET("/showAbcenseNote")

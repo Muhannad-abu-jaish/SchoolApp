@@ -90,6 +90,14 @@
                     app:cornerRadius="12dp"
 
                     />
+                <ProgressBar
+                    android:id="@+id/progress_send_message"
+                    android:layout_width="@dimen/_150sdp"
+                    android:layout_height="@dimen/_50sdp"
+                    android:layout_gravity="center"
+                    android:progress="10"
+                    android:visibility="invisible"
+                    />
                 
             </LinearLayout>
         </androidx.cardview.widget.CardView>

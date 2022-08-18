@@ -35,7 +35,16 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/text_final" />
+            app:layout_constraintTop_toBottomOf="@+id/text_final" >
+
+            <ProgressBar
+                android:id="@+id/progress_final_result"
+                android:layout_width="@dimen/_100sdp"
+                android:layout_height="@dimen/_100sdp"
+                android:layout_centerInParent="true"
+                android:progress="10"
+                />
+        </com.github.barteksc.pdfviewer.PDFView>
     </androidx.constraintlayout.widget.ConstraintLayout>
     <RelativeLayout
         android:id="@+id/main_parent_drawer_layout_rl"

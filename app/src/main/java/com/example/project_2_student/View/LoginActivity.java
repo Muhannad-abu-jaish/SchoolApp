@@ -9,6 +9,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -36,6 +37,7 @@ public class LoginActivity extends AppCompatActivity {
     Button login_btn;
     TextInputEditText email_et,password_et;
     TextView forgotPassword_tv;
+    ProgressBar progressBar;
     SharedPreferences sharedPreferences;
     public static final String NUM_NOTIFICATION = "num_notification";
     public static final String STUDENT_DATA_DB = "StudentData";
@@ -84,6 +86,7 @@ public class LoginActivity extends AppCompatActivity {
     public void init()
     {
         login_btn=findViewById(R.id.Login_btn);
+        progressBar = findViewById(R.id.progress_login);
         email_et=findViewById(R.id.login_ll_1_et_email);
         password_et=findViewById(R.id.login_ll_1_et_2_password);
         sharedPreferences = getSharedPreferences(LoginActivity.STUDENT_DATA_DB,MODE_PRIVATE);
@@ -117,14 +120,33 @@ public class LoginActivity extends AppCompatActivity {
         login_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                progressBar.setVisibility(View.VISIBLE);
+                if(checkInputs())
                 insertLogin();
-
+               else
+                Toast.makeText(getApplicationContext(),"Error in Inputs!!",Toast.LENGTH_LONG).show();
             }
         });
     }
 
-
+    private boolean checkInputs() {
+        String email = email_et.getText().toString();
+        String password = password_et.getText().toString();
+        if(email.isEmpty()||password.isEmpty())
+        {
+            return false;
+        }
+        else if (email_et.getText().toString().length()<3||email_et.getText().toString().length()>10||password_et.getText()
+                .toString().length()<3||password_et.getText().toString().length()>15)
+        {
+            return false;
+        }
+        else if (!email.matches("[aA-zZ0-9]+")||!password.matches("[aA-zZ0-9]+"))
+        {
+            return false;
+        }
+        return true;
+    }
     public void insertLogin()
     {
         API api = CONSTANT.CREATING_CALL();
@@ -134,11 +156,13 @@ public class LoginActivity extends AppCompatActivity {
             public void onResponse(Call<Student> call, Response<Student> response) {
                 if(response.isSuccessful())
                 {
+                    progressBar.setVisibility(View.GONE);
                     saveIntoSharedPrefrences(response.body());
                     finish();
                     MainParent.redirectActivity(LoginActivity.this, MainParent.class);
                 }
                 else {
+                    progressBar.setVisibility(View.GONE);
                     try {
                         Toast.makeText(getApplicationContext(),response.errorBody().string(),Toast.LENGTH_LONG).show();
                         System.out.println("error successfully"+response.errorBody().string()+ response.code());
@@ -150,7 +174,8 @@ public class LoginActivity extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<Student> call, Throwable t) {
-                Toast.makeText(getApplicationContext()," No Connection ",Toast.LENGTH_LONG).show();
+                progressBar.setVisibility(View.GONE);
+                Toast.makeText(getApplicationContext(), "Error connection ,,Please check your connect", Toast.LENGTH_SHORT).show();
                 System.out.println("error "+ t.getMessage());
 
 

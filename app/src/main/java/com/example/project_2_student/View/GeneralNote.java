@@ -9,6 +9,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -36,7 +37,7 @@ public class GeneralNote extends AppCompatActivity  {
     String myToken;
     SharedPreferences sharedPreferences;
     TextView num_notification , name_tool_bar;
-
+  ProgressBar progressBar;
 
     Button Retry;
     View noConnection;
@@ -57,6 +58,7 @@ public class GeneralNote extends AppCompatActivity  {
         Retry.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                progressBar.setVisibility(View.VISIBLE);
                 noConnection.setVisibility(View.GONE);
                 try {
                     GET_ANNOUNCEMENT();
@@ -74,6 +76,7 @@ public class GeneralNote extends AppCompatActivity  {
                     @Override
                     public void onResponse(Call<ArrayList<GeneralNotes>> call, Response<ArrayList<GeneralNotes>> response) {
                         if(response.isSuccessful()){
+                            progressBar.setVisibility(View.GONE);
                             if(response.body().size()==0){
                                 noConnection.setVisibility(View.VISIBLE);
                             }
@@ -82,6 +85,7 @@ public class GeneralNote extends AppCompatActivity  {
                                 setAdapterGeneralNote(adapter_adverts_public);
                             }
                         }else{
+                            progressBar.setVisibility(View.GONE);
                             try {
                                 Toast.makeText(getApplicationContext(),response.errorBody().string(),Toast.LENGTH_LONG).show();
                                 System.out.println("Error Statues !" + response.code() + "\t Error Body : " + response.errorBody().string());
@@ -92,6 +96,7 @@ public class GeneralNote extends AppCompatActivity  {
                     }
                     @Override
                     public void onFailure(Call<ArrayList<GeneralNotes>> call, Throwable t) {
+                        progressBar.setVisibility(View.GONE);
                         System.out.println("Error : " + t.getMessage());
                         noConnection.setVisibility(View.VISIBLE);
                     }
@@ -101,7 +106,7 @@ public class GeneralNote extends AppCompatActivity  {
     public void init(){
         Retry = findViewById(R.id.retry_connection);
         noConnection = findViewById(R.id.view_NoConnection);
-
+        progressBar = findViewById(R.id.progress_general_notes);
         name_tool_bar = findViewById(R.id.main_toolbar_activity_name_tv) ;
         name_tool_bar.setText(R.string.MAIN_GENERALNOTE);
 
