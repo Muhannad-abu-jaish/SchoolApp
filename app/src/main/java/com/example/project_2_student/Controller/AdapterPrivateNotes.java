@@ -50,14 +50,9 @@ public class AdapterPrivateNotes extends  RecyclerView.Adapter<AdapterPrivateNot
 
         String message = privateNotes.get(position).getMessage();
         String start_date = privateNotes.get(position).getStart_date();
-
-
-       // Log.d("Title", "onBindViewHolder: Title -> " + message);
-
+        holder.privateNoteTime.setText(start_date);
         holder.privateNoteMessage.setText(message);
-        holder.privateNoteStartDate.setText(start_date);
         holder.privateNoteMessage.setMovementMethod(new ScrollingMovementMethod());
-
     }
 
     @Override
@@ -68,16 +63,13 @@ public class AdapterPrivateNotes extends  RecyclerView.Adapter<AdapterPrivateNot
 
     public class ViewHolderPrivateNote extends RecyclerView.ViewHolder{
 
-        TextView privateNoteSubject , privateNoteMessage , privateNoteStartDate , privateNoteAgoTime ;
+        TextView  privateNoteMessage  , privateNoteTime ;
 
         public ViewHolderPrivateNote(@NonNull View itemView) {
             super(itemView);
 
-            // privateNoteSubject = itemView.findViewById(R.id.private_note_card_view_subject_tv) ; //the subject type (المادة)
-            privateNoteMessage = itemView.findViewById(R.id.private_note_card_view_message_tv) ;
-            //privateNoteTime = itemView.findViewById(R.id.private_note_card_view_time_tv) ; //time ago
-            privateNoteStartDate = itemView.findViewById(R.id.private_note_card_view_receive_date_tv) ;
-
+             privateNoteMessage = itemView.findViewById(R.id.private_note_card_view_message_tv) ;
+            privateNoteTime = itemView.findViewById(R.id.private_note_card_view_time_tv) ;
         }
     }
 }

@@ -128,7 +128,6 @@ public class PrivateNote extends AppCompatActivity {
             num_notification.setVisibility(View.VISIBLE);
             num_notification.setText(sharedPreferences.getString(LoginActivity.NUM_NOTIFICATION,""));
         }
-        System.out.println("Token = " + myToken) ;
         setAdapterPrivateNotes(adapterPrivateNotes) ;
     }
 

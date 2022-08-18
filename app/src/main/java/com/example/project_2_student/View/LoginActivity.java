@@ -124,7 +124,10 @@ public class LoginActivity extends AppCompatActivity {
                 if(checkInputs())
                 insertLogin();
                else
-                Toast.makeText(getApplicationContext(),"Error in Inputs!!",Toast.LENGTH_LONG).show();
+                {
+                    progressBar.setVisibility(View.GONE);
+                    Toast.makeText(getApplicationContext(),"Error in Inputs!!",Toast.LENGTH_LONG).show();
+                }
             }
         });
     }
@@ -141,7 +144,7 @@ public class LoginActivity extends AppCompatActivity {
         {
             return false;
         }
-        else if (!email.matches("[aA-zZ0-9]+")||!password.matches("[aA-zZ0-9]+"))
+        else if (!email.matches("[aA-zZ0-9ا-ي]+")||!password.matches("[aA-zZ0-9ا-ي]+"))
         {
             return false;
         }

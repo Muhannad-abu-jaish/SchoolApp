@@ -6,17 +6,18 @@
     android:orientation="vertical">
 
 
-    <androidx.cardview.widget.CardView
+    <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="5dp"
-        app:cardCornerRadius="10dp"
+        app:cardCornerRadius="30dp"
         app:cardElevation="8dp"
+        android:backgroundTint="@color/white"
         android:outlineSpotShadowColor="@color/Violet"
         android:outlineAmbientShadowColor="@color/Violet"
         app:cardMaxElevation="8dp"
         app:cardPreventCornerOverlap="true"
-        app:cardUseCompatPadding="true">
+        >
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -28,116 +29,66 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@drawable/advrts_sides"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                >
 
                 <ImageView
                     android:layout_width="111dp"
                     android:layout_height="111dp"
-                    android:background="@drawable/advrts_sides"
+                    android:src="@drawable/logo_no_background"
                     android:padding="6dp"
                     />
 
                 <LinearLayout
-                    android:layout_width="match_parent"
+                    android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:orientation="vertical"
                     android:layout_weight="2">
-
-                    <TextView
-                        android:id="@+id/private_note_card_view_subject_tv"
+                    <ScrollView
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="12dp"
-                        android:layout_marginTop="12dp"
-                        android:textSize="30sp"
-                        android:layout_weight="1"
-                        android:text="Title"/>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:layout_weight="1"
-                        android:gravity="center_vertical">
+                        android:layout_height="match_parent">
 
                         <TextView
-                            android:layout_width="wrap_content"
+                            android:id="@+id/private_note_card_view_message_tv"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_weight="0.5"
-                            android:gravity="center"
-                            android:textColor="@color/Violet"
-                            android:text="@string/RECEIVE_DATE"
-                            />
+                            android:inputType="textMultiLine"
+                            android:textColor="@color/DarkMagenta"
+                            android:padding="10dp"
+                            android:text=""
+                            tools:ignore="TextViewEdits" />
 
-                        <TextView
-                            android:id="@+id/private_note_card_view_receive_date_tv"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:gravity="center"
-                            android:textColor="@color/Violet"
-                            android:text="date"
-                            />
+                    </ScrollView>
 
-
-                    </LinearLayout>
-
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:layout_weight="1"
-                        android:gravity="center_vertical">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="0.5"
-                            android:gravity="center"
-                            android:textColor="@color/Violet"
-                            android:text="@string/SINCE_WHEN"
-                            />
-
-                        <TextView
-                            android:id="@+id/private_note_card_view_time_tv"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:gravity="center"
-                            android:textColor="@color/Violet"
-                            android:text="date"
-                            />
-
-
-                    </LinearLayout>
 
                 </LinearLayout>
 
             </LinearLayout>
-
-
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/_80sdp"
-                android:layout_marginTop="5dp"
-                android:padding="10dp"
-                android:background="@drawable/advrts_sides"
-                android:layout_gravity="bottom"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="end"
+                android:layout_gravity="end"
                 >
-                    <TextView
-                        android:id="@+id/private_note_card_view_message_tv"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:padding="10dp"
-                        android:textSize="@dimen/_15ssp"
-                        android:scrollbars="vertical"
-                        android:text=""/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:textColor="@color/MediumVioletRed"
+                    android:text="@string/start_date"
+                    />
+
+                <TextView
+                    android:id="@+id/private_note_card_view_time_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:textColor="@color/MediumVioletRed"
+                    android:text="@string/date"
+                    />
             </LinearLayout>
-
         </LinearLayout>
-    </androidx.cardview.widget.CardView>
-
-
+    </com.google.android.material.card.MaterialCardView>
 </LinearLayout>
