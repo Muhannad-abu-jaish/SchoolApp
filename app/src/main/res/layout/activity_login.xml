@@ -134,6 +134,7 @@
             android:layout_gravity="center"
             android:padding="@dimen/_5sdp"
             android:visibility="invisible"
+            android:indeterminateTint="@color/DarkMagenta"
             android:progress="10" />
     </LinearLayout>
 

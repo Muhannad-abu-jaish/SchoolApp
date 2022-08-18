@@ -96,9 +96,9 @@
                     android:layout_height="@dimen/_50sdp"
                     android:layout_gravity="center"
                     android:progress="10"
+                    android:indeterminateTint="@color/DarkMagenta"
                     android:visibility="invisible"
                     />
-                
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 

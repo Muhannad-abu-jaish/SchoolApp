@@ -25,6 +25,7 @@
             android:layout_height="@dimen/_100sdp"
             android:layout_gravity="center"
             android:progress="10"
+            android:indeterminateTint="@color/DarkMagenta"
             />
         <androidx.recyclerview.widget.RecyclerView
             android:layout_width="match_parent"
