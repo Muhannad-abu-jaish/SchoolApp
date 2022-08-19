@@ -62,6 +62,10 @@ public class SendMessage extends AppCompatActivity {
 
     }
 
+    public void ClickAbsenceWarning (View view)
+    {
+        MainParent.redirectActivity(this , Absence_Warning.class);
+    }
     public void clickSendToInstructor()
     {
         materialButton_send.setOnClickListener(new View.OnClickListener() {
@@ -127,25 +131,29 @@ public class SendMessage extends AppCompatActivity {
     public void ClickHome(View view)
     {
         //Redirect activity to home
+        finish();
         MainParent.redirectActivity(this , MainParent.class);
-        this.finish();
+
     }//End of ClickHome
 
 
     public void ClickAboutUs(View view)
     {
         //Recreate activity
+        finish();
         MainParent.redirectActivity(this , AboutUs.class);
-        this.finish();
+
     }//End of ClickAboutUs
     public void ClickGallery(View view){
+        finish();
         MainParent.redirectActivity(this,Gallery_image.class);
     }
     public void ClickPersonalProfile(View view)
     {
         //Redirect activity to dashboard
+        finish();
         MainParent.redirectActivity(this , PersonalProfile.class);
-        this.finish();
+
     }//End of ClickDashboard
 
     public void ClickLogOut(View view)
@@ -154,6 +162,7 @@ public class SendMessage extends AppCompatActivity {
         MainParent.logout(this);
     }//End of ClickLogout
     public void ClickContactUs(View view){
+        finish();
         MainParent.redirectActivity(this,Contact_us.class);
     }
 

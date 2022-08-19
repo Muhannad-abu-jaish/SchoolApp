@@ -30,5 +30,7 @@ public interface API {
     public Call<ArrayList<Absence>> AbsenceWarning(@Header("Authorization") String token);
     @GET("/see_limpidityie")
     public Call<Limpidityie> getLimpidityie(@Header("Authorization") String token);
+    @GET ("/show_marks")
+    public Call<ArrayList<PrivateNotes>> MARKS_NOTES (@Header("Authorization") String token) ;
 
 }

@@ -12,13 +12,17 @@
         <entry key="..\:/Users/muhannad/AndroidStudioProjects/Project2Student/app/src/main/res/drawable/ic_absence_warning.xml" value="0.2703125" />
         <entry key="..\:/Users/muhannad/AndroidStudioProjects/Project2Student/app/src/main/res/drawable/ic_black_logo.xml" value="0.2703125" />
         <entry key="..\:/Users/muhannad/AndroidStudioProjects/Project2Student/app/src/main/res/drawable/ic_calender.xml" value="0.2361111111111111" />
+        <entry key="..\:/Users/muhannad/AndroidStudioProjects/Project2Student/app/src/main/res/drawable/ic_facebook.xml" value="0.2703125" />
         <entry key="..\:/Users/muhannad/AndroidStudioProjects/Project2Student/app/src/main/res/drawable/ic_final_result.xml" value="0.1" />
         <entry key="..\:/Users/muhannad/AndroidStudioProjects/Project2Student/app/src/main/res/drawable/ic_gallery.xml" value="0.2703125" />
         <entry key="..\:/Users/muhannad/AndroidStudioProjects/Project2Student/app/src/main/res/drawable/ic_general_notes.xml" value="0.17407407407407408" />
+        <entry key="..\:/Users/muhannad/AndroidStudioProjects/Project2Student/app/src/main/res/drawable/ic_globe.xml" value="0.2703125" />
         <entry key="..\:/Users/muhannad/AndroidStudioProjects/Project2Student/app/src/main/res/drawable/ic_home.xml" value="0.2703125" />
         <entry key="..\:/Users/muhannad/AndroidStudioProjects/Project2Student/app/src/main/res/drawable/ic_information_svgrepo_com.xml" value="0.2703125" />
+        <entry key="..\:/Users/muhannad/AndroidStudioProjects/Project2Student/app/src/main/res/drawable/ic_location.xml" value="0.2703125" />
         <entry key="..\:/Users/muhannad/AndroidStudioProjects/Project2Student/app/src/main/res/drawable/ic_logosvg.xml" value="0.536" />
         <entry key="..\:/Users/muhannad/AndroidStudioProjects/Project2Student/app/src/main/res/drawable/ic_logout.xml" value="0.2703125" />
+        <entry key="..\:/Users/muhannad/AndroidStudioProjects/Project2Student/app/src/main/res/drawable/ic_marks.xml" value="0.2703125" />
         <entry key="..\:/Users/muhannad/AndroidStudioProjects/Project2Student/app/src/main/res/drawable/ic_menu.xml" value="0.1" />
         <entry key="..\:/Users/muhannad/AndroidStudioProjects/Project2Student/app/src/main/res/drawable/ic_more.xml" value="0.6" />
         <entry key="..\:/Users/muhannad/AndroidStudioProjects/Project2Student/app/src/main/res/drawable/ic_phone_contuct.xml" value="0.2703125" />
@@ -26,6 +30,8 @@
         <entry key="..\:/Users/muhannad/AndroidStudioProjects/Project2Student/app/src/main/res/drawable/ic_profile.xml" value="0.2703125" />
         <entry key="..\:/Users/muhannad/AndroidStudioProjects/Project2Student/app/src/main/res/drawable/ic_send_message.xml" value="0.536" />
         <entry key="..\:/Users/muhannad/AndroidStudioProjects/Project2Student/app/src/main/res/drawable/ic_settings.xml" value="0.2703125" />
+        <entry key="..\:/Users/muhannad/AndroidStudioProjects/Project2Student/app/src/main/res/drawable/ic_telphone.xml" value="0.2703125" />
+        <entry key="..\:/Users/muhannad/AndroidStudioProjects/Project2Student/app/src/main/res/drawable/ic_twitter.xml" value="0.2703125" />
         <entry key="..\:/Users/muhannad/AndroidStudioProjects/Project2Student/app/src/main/res/drawable/login_bg.xml" value="0.264" />
         <entry key="..\:/Users/muhannad/AndroidStudioProjects/Project2Student/app/src/main/res/drawable/login_button_bg.xml" value="0.10648148148148148" />
         <entry key="..\:/Users/muhannad/AndroidStudioProjects/Project2Student/app/src/main/res/drawable/login_button_gradient.xml" value="0.2703125" />
@@ -41,7 +47,7 @@
         <entry key="..\:/Users/muhannad/AndroidStudioProjects/Project2Student/app/src/main/res/drawable/personal_profile_top_bg.xml" value="0.15185185185185185" />
         <entry key="..\:/Users/muhannad/AndroidStudioProjects/Project2Student/app/src/main/res/drawable/send_message_card.xml" value="0.2703125" />
         <entry key="..\:/Users/muhannad/AndroidStudioProjects/Project2Student/app/src/main/res/drawable/special_note.xml" value="0.2703125" />
-        <entry key="..\:/Users/muhannad/AndroidStudioProjects/Project2Student/app/src/main/res/layout/absence_warning_card.xml" value="0.4" />
+        <entry key="..\:/Users/muhannad/AndroidStudioProjects/Project2Student/app/src/main/res/layout/absence_warning_card.xml" value="0.264" />
         <entry key="..\:/Users/muhannad/AndroidStudioProjects/Project2Student/app/src/main/res/layout/activity_about_us.xml" value="0.4" />
         <entry key="..\:/Users/muhannad/AndroidStudioProjects/Project2Student/app/src/main/res/layout/activity_absence__warning.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/muhannad/AndroidStudioProjects/Project2Student/app/src/main/res/layout/activity_contact_us.xml" value="0.25416666666666665" />
@@ -49,18 +55,20 @@
         <entry key="..\:/Users/muhannad/AndroidStudioProjects/Project2Student/app/src/main/res/layout/activity_gallery_image.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/muhannad/AndroidStudioProjects/Project2Student/app/src/main/res/layout/activity_general_note.xml" value="0.2" />
         <entry key="..\:/Users/muhannad/AndroidStudioProjects/Project2Student/app/src/main/res/layout/activity_general_notes.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/muhannad/AndroidStudioProjects/Project2Student/app/src/main/res/layout/activity_login.xml" value="0.2" />
-        <entry key="..\:/Users/muhannad/AndroidStudioProjects/Project2Student/app/src/main/res/layout/activity_main.xml" value="0.13020833333333334" />
+        <entry key="..\:/Users/muhannad/AndroidStudioProjects/Project2Student/app/src/main/res/layout/activity_login.xml" value="0.1" />
+        <entry key="..\:/Users/muhannad/AndroidStudioProjects/Project2Student/app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="..\:/Users/muhannad/AndroidStudioProjects/Project2Student/app/src/main/res/layout/activity_main_parent.xml" value="0.264" />
+        <entry key="..\:/Users/muhannad/AndroidStudioProjects/Project2Student/app/src/main/res/layout/activity_marks_note.xml" value="0.1" />
         <entry key="..\:/Users/muhannad/AndroidStudioProjects/Project2Student/app/src/main/res/layout/activity_personal_profile.xml" value="0.2" />
         <entry key="..\:/Users/muhannad/AndroidStudioProjects/Project2Student/app/src/main/res/layout/activity_private_note.xml" value="0.1" />
         <entry key="..\:/Users/muhannad/AndroidStudioProjects/Project2Student/app/src/main/res/layout/activity_private_notes.xml" value="0.11676798378926039" />
         <entry key="..\:/Users/muhannad/AndroidStudioProjects/Project2Student/app/src/main/res/layout/activity_send_message.xml" value="0.264" />
-        <entry key="..\:/Users/muhannad/AndroidStudioProjects/Project2Student/app/src/main/res/layout/cardview_abcense_warning.xml" value="0.4" />
+        <entry key="..\:/Users/muhannad/AndroidStudioProjects/Project2Student/app/src/main/res/layout/cardview_abcense_warning.xml" value="0.337468982630273" />
         <entry key="..\:/Users/muhannad/AndroidStudioProjects/Project2Student/app/src/main/res/layout/cardview_gallery.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/muhannad/AndroidStudioProjects/Project2Student/app/src/main/res/layout/login_button_gradient.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/muhannad/AndroidStudioProjects/Project2Student/app/src/main/res/layout/main_nav_drawer.xml" value="0.4" />
+        <entry key="..\:/Users/muhannad/AndroidStudioProjects/Project2Student/app/src/main/res/layout/main_nav_drawer.xml" value="0.264" />
         <entry key="..\:/Users/muhannad/AndroidStudioProjects/Project2Student/app/src/main/res/layout/main_toolbar.xml" value="0.5679214402618658" />
+        <entry key="..\:/Users/muhannad/AndroidStudioProjects/Project2Student/app/src/main/res/layout/mark_notes_card_view.xml" value="0.4" />
         <entry key="..\:/Users/muhannad/AndroidStudioProjects/Project2Student/app/src/main/res/layout/privat_notes_card_view.xml" value="0.25052083333333336" />
         <entry key="..\:/Users/muhannad/AndroidStudioProjects/Project2Student/app/src/main/res/layout/public_adverts_card_view.xml" value="0.264" />
         <entry key="..\:/Users/muhannad/AndroidStudioProjects/Project2Student/app/src/main/res/layout/view_no_connection.xml" value="0.19322916666666667" />

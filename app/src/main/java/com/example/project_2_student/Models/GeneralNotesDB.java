@@ -14,7 +14,7 @@ import java.util.ArrayList;
 
 public class GeneralNotesDB extends SQLiteOpenHelper {
 
-    private static final int DATABASE_VERSION = 1;
+    private static final int DATABASE_VERSION = 3;
     private static final String DATABASE_NAME = "general_notes";
     private static final String DATABASE_TABLE  ="general_note_table";
 
@@ -49,6 +49,13 @@ public class GeneralNotesDB extends SQLiteOpenHelper {
         db.execSQL(" DROP TABLE IF EXISTS " + DATABASE_TABLE);
     }
 
+    public void deleteTable()
+    {
+        SQLiteDatabase db = getWritableDatabase() ;
+        db.execSQL(" DROP TABLE IF EXISTS " + DATABASE_TABLE);
+        onCreate(db);
+    }
+
     public long addGeneralNote(GeneralNotes generalNotes)
     {
         //For write in the data base
@@ -62,6 +69,21 @@ public class GeneralNotesDB extends SQLiteOpenHelper {
         long ID = sqLiteDatabase.insert(DATABASE_TABLE , null , contentValues );
 
         return ID ;
+    }
+
+    public boolean isExists(int id )
+    {
+        //select * from databaseTable where id = 1
+        SQLiteDatabase sqLiteDatabase = this.getReadableDatabase();
+        Cursor cursor = sqLiteDatabase.query(DATABASE_TABLE , new String[]{KEY_ID , KEY_TITLE , KEY_MESSAGE , KEY_EXPIRED_DATE }, KEY_ID +"=?" ,
+                new String[]{ String.valueOf(id)},null,null,null);
+
+        if (cursor !=null) {
+            cursor.moveToFirst();
+            return true;
+        }else
+            return false ;
+
     }
 
     public GeneralNotes getGeneralNote(long id)

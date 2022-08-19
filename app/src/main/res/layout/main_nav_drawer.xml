@@ -5,7 +5,8 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    android:background="@color/Lgary"
+    android:background="@color/LemonChiffon"
+
     android:id="@+id/main_nav_drawer">
 
 
@@ -104,39 +105,7 @@
 
     </LinearLayout>
 
-    <LinearLayout
-        android:id="@+id/main_nav_drawer_ll_settings"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center_vertical"
 
-        >
-
-        <!-- android:onClick="ClickSettings"-->
-
-        <TextView
-            android:id="@+id/main_nav_drawer_ll_settings_tv"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/SETTINGS"
-            android:textStyle="bold|italic"
-            android:textSize="23sp"
-            android:textColor="@color/DarkMagenta"
-            android:padding="12dp"
-            android:layout_marginStart="16dp"/>
-
-        <ImageView
-            android:id="@+id/main_nav_drawer_ll_settings_iv"
-            android:layout_width="32dp"
-            android:layout_height="32dp"
-            android:layout_marginEnd="48dp"
-            android:src="@drawable/ic_settings"/>
-        <!--  app:tint="@color/DarkMagenta"-->
-
-
-    </LinearLayout>
 
 
     <LinearLayout
@@ -155,7 +124,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Contact us"
+            android:text="@string/CONTUCT_US"
             android:textSize="23sp"
             android:padding="12dp"
             android:textColor="@color/DarkMagenta"

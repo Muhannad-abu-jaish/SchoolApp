@@ -12,7 +12,7 @@
         android:layout_margin="5dp"
         app:cardCornerRadius="30dp"
         app:cardElevation="8dp"
-        android:backgroundTint="@color/white"
+        android:backgroundTint="@color/Lgary"
         android:outlineSpotShadowColor="@color/Violet"
         android:outlineAmbientShadowColor="@color/Violet"
         app:cardMaxElevation="8dp"
@@ -88,10 +88,10 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-
                     android:gravity="center"
+                    android:layout_gravity="start"
                     android:textColor="@color/MediumVioletRed"
-                    android:text="EXPIRED DATE :"
+                    android:text="@string/EXPIRED_DATE"
                     />
 
                 <TextView
@@ -99,6 +99,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center"
+                    android:layout_gravity="start"
                     android:textColor="@color/MediumVioletRed"
                     android:text="date"
                     />

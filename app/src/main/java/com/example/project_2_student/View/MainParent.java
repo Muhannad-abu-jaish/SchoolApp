@@ -18,7 +18,7 @@ import com.example.project_2_student.R;
 
 public class MainParent extends AppCompatActivity {
     DrawerLayout drawerLayout;
-    LinearLayout main_parent_calendar , main_parent_general_notes , main_parent_special_notes ;
+    LinearLayout main_parent_calendar , main_parent_general_notes , main_parent_special_notes , main_parents_marks_notes ;
     LinearLayout main_parent_final_result , main_parent_sends_message ;
     TextView num_notification;
     SharedPreferences sharedPreferences;
@@ -36,6 +36,7 @@ public class MainParent extends AppCompatActivity {
         clickOnCalendar();
         clickOnSendMessage();
         clickOnFinalResult();
+        clickOnMarks() ;
 
     }//End of onCreate
 
@@ -49,6 +50,7 @@ public class MainParent extends AppCompatActivity {
         main_parent_calendar=findViewById(R.id.main_parent_ll2_ll1_ll1_ll1_calender) ;
         main_parent_general_notes=findViewById(R.id.main_parent_ll_ll1_ll1_ll1_general_notes) ;
         main_parent_special_notes=findViewById(R.id.main_parent_ll_ll1_ll2_ll2_special_notes) ;
+        main_parents_marks_notes = findViewById(R.id.main_parent_marks);
         main_parent_final_result=findViewById(R.id.main_parent_ll_ll1_ll3_ll3_final_result) ;
         main_parent_sends_message=findViewById(R.id.main_parent_ll2_ll1_ll2_ll2_sends_message) ;
         num_notification = findViewById(R.id.num_notification);
@@ -69,6 +71,15 @@ public class MainParent extends AppCompatActivity {
         });
     }
 
+    public void clickOnMarks()
+    {
+        main_parents_marks_notes.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                MainParent.redirectActivity(MainParent.this , MarksNote.class);
+            }
+        });
+    }
 
     public void clickOnGeneralNotes()
     {
@@ -119,6 +130,7 @@ public class MainParent extends AppCompatActivity {
     }
 
     public void ClickAbsenceWarning(View view){
+
         redirectActivity(this,Absence_Warning.class);
     }
     public void ClickContactUs(View view){

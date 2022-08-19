@@ -29,6 +29,7 @@ public class Contact_us extends AppCompatActivity {
         clickingLinkFacebook();
         clickingLinkTwitter();
         clickingLinkWebsite();
+
     }
 
     private void clickingLinkWebsite() {
@@ -41,6 +42,11 @@ public class Contact_us extends AppCompatActivity {
     });
     }
 
+    public void ClickAbsenceWarning(View view)
+    {
+        finish();
+        MainParent.redirectActivity(this , Absence_Warning.class);
+    }
     private void clickingLinkTwitter() {
     twitter.setOnClickListener(new View.OnClickListener() {
         @Override
@@ -118,7 +124,8 @@ public class Contact_us extends AppCompatActivity {
     public void ClickHome( View view)
     {
         //Recreate activity
-        recreate();
+        finish();
+        MainParent.redirectActivity(this , MainParent.class);
 
     }//End of ClickHome
 

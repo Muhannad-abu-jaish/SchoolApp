@@ -9,21 +9,21 @@ import android.util.Log;
 
 import java.util.ArrayList;
 
-public class PrivateNotesDB extends SQLiteOpenHelper {
+public class MarksNoteDB extends SQLiteOpenHelper {
 
     private static final int DATABASE_VERSION = 4;
     private static final String DATABASE_NAME = "private_notes";
-    private static final String DATABASE_TABLE  ="notestable";
+    private static final String DATABASE_TABLE = "marks_notes_table";
+
 
     //columns name for database tables
 
-    private static final String KEY_ID = "private_note_id";
-    private static final String KEY_MESSAGE = "private_note_message";
-    private static final String KEY_START_DATE = "private_note_start_date";
+    private static final String KEY_ID = "marks_note_id";
+    private static final String KEY_MESSAGE = "marks_note_message";
+    private static final String KEY_START_DATE = "marks_note_start_date";
 
-    public PrivateNotesDB(Context context)
-    {
-        super(context,DATABASE_NAME,null,DATABASE_VERSION);
+    public MarksNoteDB(Context context) {
+        super(context, DATABASE_NAME, null, DATABASE_VERSION);
 
     }
 
@@ -31,12 +31,11 @@ public class PrivateNotesDB extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
 
         //create table
-        String query = "CREATE TABLE " + DATABASE_TABLE + "(" + KEY_ID + "INT PRIMARY KEY,"+
+        String query = "CREATE TABLE " + DATABASE_TABLE + "(" + KEY_ID + "INT PRIMARY KEY," +
                 KEY_MESSAGE + " TEXT," +
                 KEY_START_DATE + " TEXT " + ")";
         //For execute the query and create the table
         db.execSQL(query);
-
     }
 
     @Override
@@ -49,8 +48,9 @@ public class PrivateNotesDB extends SQLiteOpenHelper {
 
         db.execSQL(" DROP TABLE IF EXISTS " + DATABASE_TABLE);
         onCreate(db);
-
     }
+
+
 
     public void deleteTable()
     {
@@ -58,7 +58,6 @@ public class PrivateNotesDB extends SQLiteOpenHelper {
         db.execSQL(" DROP TABLE IF EXISTS " + DATABASE_TABLE);
         onCreate(db);
     }
-
 
     public boolean isExists(int id )
     {
@@ -74,43 +73,39 @@ public class PrivateNotesDB extends SQLiteOpenHelper {
             return false ;
 
     }
-    public long addNote(PrivateNotes privateNote)
-    {
+    public long addNote(PrivateNotes privateNote) {
         //For write in the data base
         SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
-        contentValues.put(KEY_MESSAGE,privateNote.getMessage());
-        contentValues.put(KEY_START_DATE,privateNote.getStart_date());
+        contentValues.put(KEY_MESSAGE, privateNote.getMessage());
+        contentValues.put(KEY_START_DATE, privateNote.getStart_date());
 
-        long ID = sqLiteDatabase.insert(DATABASE_TABLE,null,contentValues);
+        long ID = sqLiteDatabase.insert(DATABASE_TABLE, null, contentValues);
         Log.d("inserted", "ID -> " + ID);
 
         return ID;
     }
 
-    public PrivateNotes getPrivateNote(long id)
-    {
+    public PrivateNotes getPrivateNote(long id) {
         //select * from databaseTable where id = 1
         SQLiteDatabase sqLiteDatabase = this.getReadableDatabase();
-        Cursor cursor = sqLiteDatabase.query(DATABASE_TABLE , new String[]{KEY_ID , KEY_MESSAGE , KEY_START_DATE }, KEY_ID +"=?" ,
-                new String[]{ String.valueOf(id)},null,null,null);
+        Cursor cursor = sqLiteDatabase.query(DATABASE_TABLE, new String[]{KEY_ID, KEY_MESSAGE, KEY_START_DATE}, KEY_ID + "=?",
+                new String[]{String.valueOf(id)}, null, null, null);
 
-        if (cursor !=null)
+        if (cursor != null)
             cursor.moveToFirst();
 
-        return new PrivateNotes(cursor.getInt(0),cursor.getString(1) , cursor.getString(2));
+        return new PrivateNotes(cursor.getInt(0), cursor.getString(1), cursor.getString(2));
     }
 
-    public ArrayList<PrivateNotes> getAllPrivateNotes()
-    {
-        SQLiteDatabase sqLiteDatabase =this.getReadableDatabase();
-        ArrayList<PrivateNotes> allPovateNotes =new ArrayList<>();
+    public ArrayList<PrivateNotes> getAllPrivateNotes() {
+        SQLiteDatabase sqLiteDatabase = this.getReadableDatabase();
+        ArrayList<PrivateNotes> allPovateNotes = new ArrayList<>();
 
         //select * from databaseName
         String query = "SELECT * FROM " + DATABASE_TABLE;
-        Cursor cursor = sqLiteDatabase.rawQuery(query,null);
-        if (cursor.moveToFirst())
-        {
+        Cursor cursor = sqLiteDatabase.rawQuery(query, null);
+        if (cursor.moveToFirst()) {
             do {
 
                 PrivateNotes privateNote = new PrivateNotes();
@@ -120,7 +115,7 @@ public class PrivateNotesDB extends SQLiteOpenHelper {
 
                 allPovateNotes.add(privateNote);
 
-            }while (cursor.moveToNext());
+            } while (cursor.moveToNext());
 
         }
 

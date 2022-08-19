@@ -45,16 +45,16 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:padding="10sp"
-                        android:src="@drawable/website_saadeh" />
+                        android:src="@drawable/ic_globe" />
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="20dp"
+                        android:layout_marginTop="10dp"
                         android:fontFamily="sans-serif-black"
                         android:text="@string/website"
-                        android:textColor="@color/DarkMagenta"
-                        android:textSize="20sp" />
+                        android:textColorLink="@color/DarkMagenta"
+                        android:textSize="26sp" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -67,16 +67,17 @@
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:padding="10sp"
-                        android:src="@drawable/facebook_saadeh" />
+                        android:padding="10dp"
+                        android:src="@drawable/ic_facebook" />
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="20dp"
+                        android:layout_marginTop="10dp"
                         android:fontFamily="sans-serif-black"
+                        android:textColorLink="@color/DarkMagenta"
                         android:text="@string/facebook"
-                        android:textSize="20sp" />
+                        android:textSize="@dimen/_20ssp" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -90,15 +91,16 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:padding="10sp"
-                        android:src="@drawable/twitter_saadeh" />
+                        android:src="@drawable/ic_twitter" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="15dp"
+                        android:textColorLink="@color/DarkMagenta"
                         android:fontFamily="sans-serif-black"
                         android:text="@string/twitter"
-                        android:textSize="20sp" />
+                        android:textSize="@dimen/_20ssp" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -111,7 +113,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:padding="10sp"
-                        android:src="@drawable/phone_saadeh" />
+                        android:src="@drawable/ic_phone_contuct" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -119,7 +121,8 @@
                         android:layout_marginTop="15dp"
                         android:fontFamily="sans-serif-black"
                         android:text="+963 966 033 809"
-                        android:textSize="20sp" />
+                        android:textColor="@color/DarkMagenta"
+                        android:textSize="25sp" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -132,7 +135,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:padding="10sp"
-                        android:src="@drawable/fax_saadeh" />
+                        android:src="@drawable/ic_telphone" />
 
                     <LinearLayout
                         android:layout_width="wrap_content"
@@ -144,6 +147,7 @@
                             android:layout_height="wrap_content"
                             android:fontFamily="sans-serif-black"
                             android:text="011 2219877"
+                            android:textColor="@color/DarkMagenta"
                             android:textSize="20sp" />
 
                         <TextView
@@ -151,6 +155,7 @@
                             android:layout_height="wrap_content"
                             android:fontFamily="sans-serif-black"
                             android:text="011 22966696"
+                            android:textColor="@color/DarkMagenta"
                             android:textSize="20sp" />
                     </LinearLayout>
 
@@ -165,16 +170,16 @@
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:padding="10sp"
-                        android:src="@drawable/location_saadeh" />
+                        android:src="@drawable/ic_location" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="15dp"
+                        android:layout_marginTop="4dp"
+                        android:textColor="@color/DarkMagenta"
                         android:fontFamily="sans-serif-black"
-                        android:text="Damascus - Kanawat"
-                        android:textSize="20sp" />
+                        android:text="Damascus-Kanawat"
+                        android:textSize="27sp" />
                 </LinearLayout>
 
 

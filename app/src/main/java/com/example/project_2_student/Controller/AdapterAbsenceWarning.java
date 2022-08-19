@@ -43,9 +43,9 @@ public class AdapterAbsenceWarning extends RecyclerView.Adapter<AdapterAbsenceWa
         TextView message , start_date , exp_date;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            message = itemView.findViewById(R.id.Absence_warning_text);
-            start_date = itemView.findViewById(R.id.start_date_Absence_warning);
-            exp_date = itemView.findViewById(R.id.exp_date_Absence_warning);
+            message = itemView.findViewById(R.id.absence_warning_card_view_message_tv);
+            start_date = itemView.findViewById(R.id.absence_warning_card_view_receive_date_tv);
+            exp_date = itemView.findViewById(R.id.absence_warning_card_view_exp_date);
         }
     }
 }

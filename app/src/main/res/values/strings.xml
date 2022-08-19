@@ -14,6 +14,7 @@
     //Main Parent
     <string name="MAIN_GENERALNOTE">General Notes</string>
     <string name="MAIN_SPECIALNOTE">Special Notes</string>
+    <string name="MAIN_MARKNOTES">Mark Notes</string>
     <string name="MAIN_SEND_NOTE_TO_THE_INSTRUCTOR">Send Message</string>
     <string name="MAIN_FINAL_RESULT">Final Result</string>
     <string name="MAIN_CALENDER">Calender</string>
@@ -34,10 +35,10 @@
 
     //Special Note and General Note
     <string name="EXPIRED_DATE">Expired date:</string>
-    <string name="SINCE_WHEN"> Since when :</string>
-    <string name="RECEIVE_DATE">Receive Date :</string>
+    <string name="SINCE_WHEN"> Since when </string>
+    <string name="RECEIVE_DATE">Receive Date </string>
 
-
+    <string name="MARKS">Marks</string>
 
     //Send Message
     <string name="WRITE_THE_MESSAGE">Write the message pleas </string>

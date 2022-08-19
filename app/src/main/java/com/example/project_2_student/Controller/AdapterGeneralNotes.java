@@ -1,6 +1,7 @@
 package com.example.project_2_student.Controller;
 
 import android.text.method.ScrollingMovementMethod;
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,6 +17,7 @@ import java.util.ArrayList;
 
 public class AdapterGeneralNotes extends RecyclerView.Adapter<AdapterGeneralNotes.ViewHolder> {
     ArrayList<GeneralNotes> generalNotes = new ArrayList<>();
+    LayoutInflater layoutInflater;
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -24,6 +26,12 @@ public class AdapterGeneralNotes extends RecyclerView.Adapter<AdapterGeneralNote
                 from(parent.getContext()).
                 inflate(R.layout.public_adverts_card_view,parent,false)
         );
+    }
+
+    public AdapterGeneralNotes(Context context , ArrayList<GeneralNotes> generalNotes) {
+        this.generalNotes = generalNotes;
+        this.layoutInflater = LayoutInflater.from(context) ;
+
     }
 
     @Override

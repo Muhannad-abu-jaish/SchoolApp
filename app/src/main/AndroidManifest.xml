@@ -16,7 +16,10 @@
         android:theme="@style/Theme.Project2Student"
         android:usesCleartextTraffic="true"
         tools:targetApi="m">
-        <activity android:name=".View.Gallery_image"></activity>
+        <activity
+            android:name=".View.MarksNote"
+            android:exported="false" />
+        <activity android:name=".View.Gallery_image" />
         <activity android:name=".View.Contact_us" />
         <activity android:name=".View.FinalResult" />
         <activity android:name=".View.Absence_Warning" />
@@ -46,11 +49,11 @@
             android:exported="false" />
         <activity
             android:name=".View.MainParent"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".View.WeekProgram"
-            android:screenOrientation="landscape"
-            android:exported="true"></activity>
+            android:exported="true"
+            android:screenOrientation="landscape" />
         <activity
             android:name=".View.LoginActivity"
             android:exported="true">

@@ -4,6 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:id="@+id/final_result_drawer"
     android:layout_height="match_parent"
     tools:context=".View.FinalResult">
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -15,14 +16,7 @@
         android:id="@+id/include"
         layout="@layout/main_toolbar" />
 
-<TextView
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:text="@string/MAIN_FINAL_RESULT"
-    android:gravity="center"
-    app:layout_constraintTop_toBottomOf="@+id/include"
-    android:id="@+id/text_final"
-    android:textSize="@dimen/_45sdp"/>
+
         <include layout="@layout/view_no_connection"
             android:id="@+id/view_NoConnection"
             android:visibility="gone"/>

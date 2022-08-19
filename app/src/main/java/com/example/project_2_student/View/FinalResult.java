@@ -1,6 +1,7 @@
 package com.example.project_2_student.View;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
@@ -39,6 +40,7 @@ public class FinalResult extends AppCompatActivity {
   ProgressBar progressBar;
   Button Retry;
   View noConnection;
+  DrawerLayout drawerLayout ;
   @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -101,6 +103,8 @@ public class FinalResult extends AppCompatActivity {
        // pdfView = findViewById(R.id.idPDFView);
         name_tool_bar = findViewById(R.id.main_toolbar_activity_name_tv) ;
         name_tool_bar.setText(R.string.MAIN_FINAL_RESULT);
+
+        drawerLayout = findViewById(R.id.final_result_drawer) ;
         progressBar = findViewById(R.id.progress_final_result);
         Retry = findViewById(R.id.retry_connection);
         noConnection = findViewById(R.id.view_NoConnection);
@@ -144,5 +148,68 @@ public class FinalResult extends AppCompatActivity {
         }
     }
 
+
+    public void ClickAbsenceWarning(View view)
+    {
+        finish();
+        MainParent.redirectActivity(this , Absence_Warning.class);
+    }
+
+    public void ClickMenu(View view)
+    {
+        //Open drawer
+        MainParent.openDrawer(drawerLayout);
+    }//End of ClickMenu
+
+
+    public void ClickLogo(View view)
+    {
+        //Close drawer
+        MainParent.closeDrawer(drawerLayout);
+    }//end of ClickLogo
+
+    public void ClickHome(View view)
+    {
+        //Redirect activity to home
+        finish();
+        MainParent.redirectActivity(this , MainParent.class);
+    }//End of ClickHome
+
+
+    public void ClickAboutUs(View view)
+    {
+        //Recreate activity
+        finish();
+        MainParent.redirectActivity(this , AboutUs.class);
+    }//End of ClickAboutUs
+    public void ClickGallery(View view){
+        finish();
+      MainParent.redirectActivity(this,Gallery_image.class);
+    }
+    public void ClickContactUs(View view){
+        finish();
+      MainParent.redirectActivity(this,Contact_us.class);
+    }
+
+    public void ClickPersonalProfile(View view)
+    {
+        //Redirect activity to dashboard
+        finish();
+        MainParent.redirectActivity(this , PersonalProfile.class);
+    }//End of ClickDashboard
+
+    public void ClickLogOut(View view)
+    {
+        //Close app
+        MainParent.logout(this);
+    }//End of ClickLogout
+
+
+    @Override
+    protected void onPause() {
+        MainParent.closeDrawer(drawerLayout);
+        super.onPause();
+        //Close drawer
+    }
 
 }

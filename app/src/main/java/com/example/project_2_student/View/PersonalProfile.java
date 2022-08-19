@@ -151,15 +151,18 @@ public class PersonalProfile extends AppCompatActivity {
         MainParent.redirectActivity(this , AboutUs.class);
     }//End of ClickAboutUs
     public void ClickGallery(View view){
+        finish();
         MainParent.redirectActivity(this,Gallery_image.class);
     }
     public void ClickContactUs(View view){
+        finish();
         MainParent.redirectActivity(this,Contact_us.class);
     }
 
     public void ClickPersonalProfile(View view)
     {
         //Redirect activity to dashboard
+        finish();
         recreate();
     }//End of ClickDashboard
 

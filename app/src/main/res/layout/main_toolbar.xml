@@ -6,7 +6,7 @@
     android:layout_height="wrap_content"
     android:orientation="horizontal"
     android:padding="12dp"
-    android:background="@color/DarkMagenta"
+    android:background="@color/LemonChiffon"
     android:gravity="center_vertical"
     >
 
@@ -27,7 +27,7 @@
         android:layout_height="wrap_content"
         android:text="ISA"
         android:textAlignment="center"
-        android:textColor="@color/white"
+        android:textColor="@color/DarkMagenta"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"

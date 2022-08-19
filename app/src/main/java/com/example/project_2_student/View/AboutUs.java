@@ -27,6 +27,11 @@ public class AboutUs extends AppCompatActivity {
     }//End of onCreate
 
 
+    public void ClickAbsenceWarning(View view)
+    {
+        finish();
+        MainParent.redirectActivity(this , Absence_Warning.class);
+    }
     public void init()
     {
         name_tool_bar = findViewById(R.id.main_toolbar_activity_name_tv) ;
@@ -58,23 +63,29 @@ public class AboutUs extends AppCompatActivity {
     public void ClickHome(View view)
     {
         //Redirect activity to home
+        finish();
         MainParent.redirectActivity(this , MainParent.class);
     }//End of ClickHome
     public void ClickGallery(View view){
+        finish();
         MainParent.redirectActivity(this,Gallery_image.class);
     }
     public void ClickContactUs(View view){
+        finish();
         MainParent.redirectActivity(this,Contact_us.class);
     }
+
     public void ClickAboutUs(View view)
     {
         //Recreate activity
+        finish();
         recreate();
     }//End of ClickAboutUs
 
     public void ClickPersonalProfile(View view)
     {
         //Redirect activity to dashboard
+        finish();
         MainParent.redirectActivity(this , PersonalProfile.class);
     }//End of ClickDashboard
 
